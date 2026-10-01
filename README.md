@@ -1,2 +1,0 @@
-# BLTD
-PA Model

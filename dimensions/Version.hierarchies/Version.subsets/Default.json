@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"Default",
+	"Alias":"MEMBER_NAME",
+	"Expression":"{DISTINCT({[Version].[Version].MEMBERS,{[Version].[Version].Levels(0).MEMBERS}})}"
+}

@@ -1,0 +1,6 @@
+SKIPCHECK;
+FEEDSTRINGS;
+
+
+FEEDERS;
+[]=>DB('nReporting_Financial', !Version, !Currency, !Company, !Division_Department, !NLocation, !Time, !Account, !Measure );

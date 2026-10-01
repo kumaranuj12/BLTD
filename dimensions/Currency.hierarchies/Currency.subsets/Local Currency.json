@@ -1,0 +1,11 @@
+{
+	"@type":"Subset",
+	"Name":"Local Currency",
+	"Alias":"Caption",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('Currency')/Hierarchies('Currency')/Elements('Local Currency')"
+		}
+	]
+}

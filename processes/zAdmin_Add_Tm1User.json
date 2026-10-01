@@ -1,0 +1,13 @@
+{
+	"@type":"Process",
+	"Name":"zAdmin_Add_Tm1User",
+	"HasSecurityAccess":false,
+	"Code@Code.link":"zAdmin_Add_Tm1User.ti",
+	"UIData":"_ParameterConstraints=e30=\f",
+	"DataSource":
+	{
+		"Type":"None"
+	},
+	"Parameters":[],
+	"Variables":[]
+}

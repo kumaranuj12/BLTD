@@ -1,0 +1,32 @@
+#region Prolog
+
+### This Process will create compressed backup of data & logs folder, It maintains 30 days logs ####
+SaveDataAll;
+
+# Server ( Both Need to change)
+Server = 'Bay-Ltd' ;
+DataFolder = 'Tm1_Data' ;
+ParentFolder = 'E:\TM1Model\Bay-Ltd';
+# Set the number of days for keeping the log files and zip files
+LogDays='30';
+ZipDays='30';
+LogsZipDays= '30';
+
+# Set the file paths
+ServerPath =  ParentFolder | '\' | DataFolder  | '\';
+LogsPath= ParentFolder | '\logs\';
+ZipPath =   ParentFolder | '\Tm1_Backups\';
+UtilityPath =  ParentFolder | '\Backup_Utility\';
+
+# Pick up the utility and timestamp
+BATCall= UtilityPath | 'adm_Backup_TM1.bat';
+TimeStamp = TIMST (NOW, '\Y\m\d\h\i\s' );
+
+ASCIIOUTPUT ('Back.txt', BATCall | ' ' | ServerPath | ' ' | ZipPath | ' ' | UtilityPath | ' ' |  TimeStamp | ' ' | LogDays | ' ' |  ZipDays | ' ' | LogsPath | ' ' | LogsZipDays );
+
+# Call the backup utility
+ExecuteCommand( BATCall | ' ' | ServerPath | ' ' | ZipPath | ' ' | UtilityPath | ' ' | TimeStamp | ' ' | LogDays | ' ' |  ZipDays | ' ' | LogsPath | ' ' | LogsZipDays,2 );
+
+#ASCIIOUTPUT ('Back.txt', BATCall | ' ' | ServerPath | ' ' | ZipPath | ' ' | UtilityPath | ' ' |  TimeStamp | ' ' | LogDays | ' ' |  ZipDays | ' ' | LogsPath );
+
+#endregion

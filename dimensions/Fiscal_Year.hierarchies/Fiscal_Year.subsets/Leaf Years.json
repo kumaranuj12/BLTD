@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"Leaf Years",
+	"Alias":"MEMBER_NAME",
+	"Expression":"{{TM1FILTERBYLEVEL(TM1DRILLDOWNMEMBER(TM1SubsetToSet([Fiscal_Year].[Fiscal_Year], \"Default\", \"public\"), ALL, RECURSIVE), 0)}}"
+}

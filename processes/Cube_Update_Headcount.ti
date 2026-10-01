@@ -1,0 +1,18 @@
+#region Prolog
+i=0;
+OutputFil='HeadCount.txt';
+#endregion
+#region Metadata
+IF(i =0);
+ASCIIOutput( OutputFil,'Division','DepartmentDescription','EmployeeNumber','EmployeeName','ClassType','ClassDescription','SupervisorName','PayFequ','Exemption','OrigHireDate',
+'RehireDate','WatchAnniversaryDate','EligibleActiveYears','Vacation','Holiday','ContractDriven','VacationWe','VacationWeek2','HolidayDate','CellPhone','AirCard','Laptop','Desktop','Tablet','WellsFargo','AmexCard',
+'GasCard','VehicleLease');
+    ASCIIOutput( 'Anuj.txt','Test');
+
+i=i+1;
+ENDIF;
+
+ASCIIOutput( OutputFil,vDivision,vDeptDescription,vEmployeeNum,vEmployeeName,vClassType,vClassDesc,vSupervisorName,vPayFequ,vExemption,vHireDate,
+vRehireDate,vWatchAnniversaryDate,vEligibleActiveYears,vVacation,vHoliday,vContractDriven,vVacation,vVacationWeek1Date,vHolidayDate,vCellPhone,vAirCard,vLaptop,
+vDesktop,vTablet,vWellsFargo,vAmexCard,vGasCard,vVehicleLease);
+#endregion

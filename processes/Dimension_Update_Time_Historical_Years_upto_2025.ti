@@ -1,0 +1,414 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+### This Process will update the Time dimension ###
+### Standard FY: Nov (Prev Year) - Oct (Current Year) = 12 months ###
+### FY2025 Exception: Nov 2024 - Dec 2025 = 14 months (Q4 extended Aug-Dec) ###
+### FY2026+: Process will exit with a custom message ###
+
+DimName = 'Time';
+DimName01 = 'Fiscal_Year';
+
+IF ( DimensionExists ( DimName) = 0 ) ;
+  DimensionCreate ( DimName ) ;
+ENDIF ;
+
+IF ( DimensionExists ( DimName01) = 0 ) ;
+  DimensionCreate ( DimName01 ) ;
+ENDIF ;
+
+DIMENSIONELEMENTINSERTDIRECT(DimName01,'',psYear,'N');
+DIMENSIONELEMENTINSERTDIRECT(DimName01,'','All_Years','C');
+DIMENSIONELEMENTCOMPONENTADDDIRECT(DimName01, 'All_Years' , psYear , 1);
+
+svInputYear    = 'FY-' | psYear;
+svFiscal_Input = svInputYear | ' Input';
+svCurrentYear  = psYear;
+svPreviousYear = NumberToString( StringToNumber(psYear) - 1 );
+svNextYear     = NumberToString( StringToNumber(psYear) + 1 );
+
+svQ1 = 'Q1-' | psYear;
+svQ2 = 'Q2-' | psYear;
+svQ3 = 'Q3-' | psYear;
+svQ4 = 'Q4-' | psYear;
+
+#################################################################
+### YEAR GUARD: Reject any fiscal year 2026 or beyond         ###
+#################################################################
+
+IF ( StringToNumber(psYear) > 2025 );
+   sMessage = 'ERROR: Fiscal Year ' | psYear | ' is not supported. ' |
+              'This process is configured for FY2025 and earlier only. ' |
+              'Process aborted.';
+   LogOutput( 'ERROR', sMessage );
+   ProcessQuit;
+ENDIF;
+
+#################################################################
+
+# Determine total months for this fiscal year
+# FY2025 = 14 months (Nov 2024 – Dec 2025)
+# All other years <= 2025 = 12 months (Nov PY – Oct CY)
+
+IF ( psYear @= '2025' );
+   nvTotalMonths = 14;
+ELSE;
+   nvTotalMonths = 12;
+ENDIF;
+
+#### Check if Attributes Exist or create them ###
+
+vsAttribute0 = 'Description';
+IF ( DIMIX ('}Element_Attributes_' | DimName, vsAttribute0 ) = 0);
+    ATTRINSERT ( DimName,'', vsAttribute0 ,'A');
+ENDIF;
+
+vsAttribute1 = 'Start Date';
+IF ( DIMIX ('}Element_Attributes_' | DimName, vsAttribute1 ) = 0);
+    ATTRINSERT ( DimName,'', vsAttribute1 ,'S');
+ENDIF;
+
+vsAttribute2 = 'End Date';
+IF ( DIMIX ('}Element_Attributes_' | DimName, vsAttribute2 ) = 0);
+    ATTRINSERT ( DimName,'', vsAttribute2 ,'S');
+ENDIF;
+
+vsAttribute3 = 'Previous Period';
+IF ( DIMIX ('}Element_Attributes_' | DimName, vsAttribute3 ) = 0);
+    ATTRINSERT ( DimName,'', vsAttribute3 ,'S');
+ENDIF;
+
+vsAttribute4 = 'Next Period';
+IF ( DIMIX ('}Element_Attributes_' | DimName, vsAttribute4 ) = 0);
+    ATTRINSERT ( DimName,'', vsAttribute4 ,'S');
+ENDIF;
+
+vsAttribute5 = 'Serial Date';
+IF ( DIMIX ('}Element_Attributes_' | DimName, vsAttribute5 ) = 0);
+    ATTRINSERT ( DimName,'', vsAttribute5 ,'S');
+ENDIF;
+
+vsAttribute6 = 'First Period';
+IF ( DIMIX ('}Element_Attributes_' | DimName, vsAttribute6 ) = 0);
+    ATTRINSERT ( DimName,'', vsAttribute6 ,'N');
+ENDIF;
+
+vsAttribute7 = 'Last Period';
+IF ( DIMIX ('}Element_Attributes_' | DimName, vsAttribute7 ) = 0);
+    ATTRINSERT ( DimName,'', vsAttribute7 ,'N');
+ENDIF;
+
+########## ADD Year & Quarter CONSOLIDATED ELEMENTS #############
+
+DIMENSIONELEMENTINSERTDIRECT(DimName,'','All_Years','C');
+DIMENSIONELEMENTINSERTDIRECT(DimName,'','All_YTDs','C');
+DIMENSIONELEMENTINSERTDIRECT(DimName,'', svQ1,'C');
+DIMENSIONELEMENTINSERTDIRECT(DimName,'', svQ2,'C');
+DIMENSIONELEMENTINSERTDIRECT(DimName,'', svQ3,'C');
+DIMENSIONELEMENTINSERTDIRECT(DimName,'', svQ4,'C');
+DIMENSIONELEMENTINSERTDIRECT(DimName,'',  'FY_Input','C');
+DIMENSIONELEMENTINSERTDIRECT(DimName,'', svFiscal_Input,'N');
+
+DIMENSIONELEMENTCOMPONENTADDDIRECT(DimName, 'All_Years' , svInputYear , 1);
+DIMENSIONELEMENTCOMPONENTADDDIRECT(DimName, 'All_YTDs'  , svCurrentYear | ' YTD' , 1);
+DIMENSIONELEMENTCOMPONENTADDDIRECT(DimName, svInputYear , svQ1, 1);
+DIMENSIONELEMENTCOMPONENTADDDIRECT(DimName, svInputYear , svQ2, 1);
+DIMENSIONELEMENTCOMPONENTADDDIRECT(DimName, svInputYear , svQ3, 1);
+DIMENSIONELEMENTCOMPONENTADDDIRECT(DimName, svInputYear , svQ4, 1);
+DIMENSIONELEMENTCOMPONENTADDDIRECT(DimName, 'FY_Input'  , svFiscal_Input, 1);
+
+###### Create Month elements, Quarter rollups & YTD chains #####
+
+nvMonthCounter = 1;
+
+WHILE ( nvMonthCounter <= nvTotalMonths );
+
+   IF (nvMonthCounter = 1) ;
+      svMonthAlias     = 'Nov-' | svPreviousYear;
+      svMonth          = '11-'  | svPreviousYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svNext_Month_YTD = '12-' | svPreviousYear | ' YTD';
+      svQuarter        = svQ1;
+   ENDIF;
+
+   IF (nvMonthCounter = 2) ;
+      svMonthAlias     = 'Dec-' | svPreviousYear;
+      svMonth          = '12-'  | svPreviousYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svNext_Month_YTD = '01-' | svCurrentYear | ' YTD';
+      svQuarter        = svQ1;
+   ENDIF;
+
+   IF (nvMonthCounter = 3) ;
+      svMonthAlias     = 'Jan-' | svCurrentYear;
+      svMonth          = '01-'  | svCurrentYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svNext_Month_YTD = '02-' | svCurrentYear | ' YTD';
+      svQuarter        = svQ1;
+   ENDIF;
+
+   IF (nvMonthCounter = 4) ;
+      svMonthAlias     = 'Feb-' | svCurrentYear;
+      svMonth          = '02-'  | svCurrentYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svNext_Month_YTD = '03-' | svCurrentYear | ' YTD';
+      svQuarter        = svQ2;
+   ENDIF;
+
+   IF (nvMonthCounter = 5) ;
+      svMonthAlias     = 'Mar-' | svCurrentYear;
+      svMonth          = '03-'  | svCurrentYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svNext_Month_YTD = '04-' | svCurrentYear | ' YTD';
+      svQuarter        = svQ2;
+   ENDIF;
+
+   IF (nvMonthCounter = 6) ;
+      svMonthAlias     = 'Apr-' | svCurrentYear;
+      svMonth          = '04-'  | svCurrentYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svNext_Month_YTD = '05-' | svCurrentYear | ' YTD';
+      svQuarter        = svQ2;
+   ENDIF;
+
+   IF (nvMonthCounter = 7) ;
+      svMonthAlias     = 'May-' | svCurrentYear;
+      svMonth          = '05-'  | svCurrentYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svNext_Month_YTD = '06-' | svCurrentYear | ' YTD';
+      svQuarter        = svQ3;
+   ENDIF;
+
+   IF (nvMonthCounter = 8) ;
+      svMonthAlias     = 'Jun-' | svCurrentYear;
+      svMonth          = '06-'  | svCurrentYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svNext_Month_YTD = '07-' | svCurrentYear | ' YTD';
+      svQuarter        = svQ3;
+   ENDIF;
+
+   IF (nvMonthCounter = 9) ;
+      svMonthAlias     = 'Jul-' | svCurrentYear;
+      svMonth          = '07-'  | svCurrentYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svNext_Month_YTD = '08-' | svCurrentYear | ' YTD';
+      svQuarter        = svQ3;
+   ENDIF;
+
+   IF (nvMonthCounter = 10) ;
+      svMonthAlias     = 'Aug-' | svCurrentYear;
+      svMonth          = '08-'  | svCurrentYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svNext_Month_YTD = '09-' | svCurrentYear | ' YTD';
+      svQuarter        = svQ4;
+   ENDIF;
+
+   IF (nvMonthCounter = 11) ;
+      svMonthAlias     = 'Sep-' | svCurrentYear;
+      svMonth          = '09-'  | svCurrentYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svNext_Month_YTD = '10-' | svCurrentYear | ' YTD';
+      svQuarter        = svQ4;
+   ENDIF;
+
+   IF (nvMonthCounter = 12) ;
+      svMonthAlias     = 'Oct-' | svCurrentYear;
+      svMonth          = '10-'  | svCurrentYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svQuarter        = svQ4;
+      IF ( psYear @= '2025' );
+         svNext_Month_YTD = '11-' | svCurrentYear | ' YTD';
+      ELSE;
+         svNext_Month_YTD = svCurrentYear | ' YTD';
+      ENDIF;
+   ENDIF;
+
+   IF (nvMonthCounter = 13) ;
+      svMonthAlias     = 'Nov-' | svCurrentYear;
+      svMonth          = '11-'  | svCurrentYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svNext_Month_YTD = '12-' | svCurrentYear | ' YTD';
+      svQuarter        = svQ4;
+   ENDIF;
+
+   IF (nvMonthCounter = 14) ;
+      svMonthAlias     = 'Dec-' | svCurrentYear;
+      svMonth          = '12-'  | svCurrentYear;
+      svMonth_YTD      = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+      svNext_Month_YTD = svCurrentYear | ' YTD';
+      svQuarter        = svQ4;
+   ENDIF;
+
+   DIMENSIONELEMENTINSERTDIRECT (DimName,'', svMonth, 'N');
+   DIMENSIONELEMENTCOMPONENTADDDIRECT (DimName, svQuarter, svMonth, 1);
+
+   DIMENSIONELEMENTINSERTDIRECT(DimName,'', svNext_Month_YTD, 'C');
+   DIMENSIONELEMENTINSERTDIRECT(DimName,'', svMonth_YTD, 'C');
+
+   DIMENSIONELEMENTCOMPONENTADDDIRECT(DimName, svMonth_YTD, svMonth, 1);
+   DIMENSIONELEMENTCOMPONENTADDDIRECT(DimName, svNext_Month_YTD, svMonth_YTD, 1);
+
+   DIMENSIONSORTORDER(DimName, 'BYINPUT','ASCENDING','ByHierarchy','ASCENDING');
+
+   nvMonthCounter = nvMonthCounter + 1;
+
+END;
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+###### Epilog: Set Description Attributes #####
+
+# Guard applies to Epilog too — if Prolog quit, Epilog should not run.
+# ProcessQuit in Prolog prevents Epilog execution in TM1/PA automatically.
+# The re-check below is a belt-and-braces safety net.
+
+IF ( StringToNumber(psYear) > 2025 );
+   ProcessQuit;
+ENDIF;
+
+IF ( psYear @= '2025' );
+   nvTotalMonths = 14;
+ELSE;
+   nvTotalMonths = 12;
+ENDIF;
+
+nvMonthCounter = 1;
+
+WHILE ( nvMonthCounter <= nvTotalMonths );
+
+   IF (nvMonthCounter = 1) ;
+      svMonthAlias = 'Nov-' | svPreviousYear;
+      svMonth      = '11-'  | svPreviousYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   IF (nvMonthCounter = 2) ;
+      svMonthAlias = 'Dec-' | svPreviousYear;
+      svMonth      = '12-'  | svPreviousYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   IF (nvMonthCounter = 3) ;
+      svMonthAlias = 'Jan-' | svCurrentYear;
+      svMonth      = '01-'  | svCurrentYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   IF (nvMonthCounter = 4) ;
+      svMonthAlias = 'Feb-' | svCurrentYear;
+      svMonth      = '02-'  | svCurrentYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   IF (nvMonthCounter = 5) ;
+      svMonthAlias = 'Mar-' | svCurrentYear;
+      svMonth      = '03-'  | svCurrentYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   IF (nvMonthCounter = 6) ;
+      svMonthAlias = 'Apr-' | svCurrentYear;
+      svMonth      = '04-'  | svCurrentYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   IF (nvMonthCounter = 7) ;
+      svMonthAlias = 'May-' | svCurrentYear;
+      svMonth      = '05-'  | svCurrentYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   IF (nvMonthCounter = 8) ;
+      svMonthAlias = 'Jun-' | svCurrentYear;
+      svMonth      = '06-'  | svCurrentYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   IF (nvMonthCounter = 9) ;
+      svMonthAlias = 'Jul-' | svCurrentYear;
+      svMonth      = '07-'  | svCurrentYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   IF (nvMonthCounter = 10) ;
+      svMonthAlias = 'Aug-' | svCurrentYear;
+      svMonth      = '08-'  | svCurrentYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   IF (nvMonthCounter = 11) ;
+      svMonthAlias = 'Sep-' | svCurrentYear;
+      svMonth      = '09-'  | svCurrentYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   IF (nvMonthCounter = 12) ;
+      svMonthAlias = 'Oct-' | svCurrentYear;
+      svMonth      = '10-'  | svCurrentYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   IF (nvMonthCounter = 13) ;
+      svMonthAlias = 'Nov-' | svCurrentYear;
+      svMonth      = '11-'  | svCurrentYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   IF (nvMonthCounter = 14) ;
+      svMonthAlias = 'Dec-' | svCurrentYear;
+      svMonth      = '12-'  | svCurrentYear;
+      svMonth_YTD  = svMonth | ' YTD';
+      svMonth_YTDAlias = svMonthAlias | ' YTD';
+   ENDIF;
+
+   ATTRPUTS( svMonthAlias,     DimName, svMonth,      vsAttribute0 );
+   ATTRPUTS( svMonth_YTDAlias, DimName, svMonth_YTD,  vsAttribute0 );
+
+   nvMonthCounter = nvMonthCounter + 1;
+
+END;
+
+
+#ExecuteProcess( 'Dimension_Update_Time_Attributes' );
+#endregion

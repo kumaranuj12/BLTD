@@ -1,0 +1,13 @@
+{
+	"@type":"Process",
+	"Name":"sProcessSecurityUpdate",
+	"HasSecurityAccess":true,
+	"Code@Code.link":"sProcessSecurityUpdate.ti",
+	"UIData":"_ParameterConstraints=e30=\f",
+	"DataSource":
+	{
+		"Type":"None"
+	},
+	"Parameters":[],
+	"Variables":[]
+}

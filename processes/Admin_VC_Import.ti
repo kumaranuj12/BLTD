@@ -1,0 +1,348 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+#=======================================
+# Process Variables
+
+Cube = pCube;
+FileName = 'VC_Export_' | Cube | '.cma';
+
+# Check For Export File
+IF( FILEEXISTS( FileName) = 0);
+   PROCESSBREAK;
+ENDIF;
+
+CUBESETLOGCHANGES( Cube, 0);
+
+VariableNum = CELLGETN( 'VC_CubeDims', Cube, 'All Dimensions', 'DimCount') + 1;
+LastDim =
+CELLGETS( 'VC_CubeDims', Cube,
+NUMBERTOSTRING(CELLGETN( 'VC_CubeDims', Cube, 'All Dimensions', 'DimCount')),
+'DimName');
+
+#=======================================
+# Create View
+
+ViewName = 'zzVC_ZeroOut_' | Cube;
+SubName = ViewName;
+
+IF( ViewExists( Cube, ViewName) = 1);
+   VIEWDESTROY( Cube, ViewName);
+ENDIF;
+
+VIEWCREATE( Cube, ViewName);
+
+#===================
+# Map1
+
+sDim = Map1Dim;
+sElement = Map1To;
+
+IF( LONG( sDim) > 0);
+IF( SUBSETEXISTS( sDim, SubName) = 1);
+     SUBSETDESTROY( sDim, SubName);
+ENDIF;
+IF( ELLEV( sDim, sElement) > 0);
+  sMDX = '{TM1FILTERBYLEVEL({DESCENDANTS(' | sDim | '.[' | sElement | ']) }, 0)}';
+  SUBSETCREATEBYMDX(SubName, sMDX);
+ENDIF;
+IF( ELLEV( sDim, sElement) = 0);
+   SUBSETCREATE( sDim, SubName);
+   SUBSETELEMENTINSERT(sDim, SubName, sElement, 1);
+ENDIF;
+VIEWSUBSETASSIGN( Cube, ViewName, sDim, SubName);
+ENDIF;
+
+#===================
+# Map2 Time Dim
+
+nvTimeDiff = STRINGTONUMBER(Map2To) - STRINGTONUMBER(Map2From);
+
+
+sDim = Map2Dim;
+sElement = 'FY_' | Map2From;
+
+IF( LONG( sDim) > 0);
+IF( SUBSETEXISTS( sDim, SubName) = 1);
+     SUBSETDESTROY( sDim, SubName);
+ENDIF;
+IF( ELLEV( sDim, sElement) > 0);
+  sMDX = '{TM1FILTERBYLEVEL({DESCENDANTS(' | sDim | '.[' | sElement | ']) }, 0)}';
+  SUBSETCREATEBYMDX(SubName, sMDX);
+ENDIF;
+IF( ELLEV( sDim, sElement) = 0);
+   SUBSETCREATE( sDim, SubName);
+   SUBSETELEMENTINSERT(sDim, SubName, sElement, 1);
+ENDIF;
+VIEWSUBSETASSIGN( Cube, ViewName, sDim, SubName);
+ENDIF;
+
+#===================
+# Map3
+
+sDim = Map3Dim;
+sElement = Map3To;
+
+IF( LONG( sDim) > 0);
+IF( SUBSETEXISTS( sDim, SubName) = 1);
+     SUBSETDESTROY( sDim, SubName);
+ENDIF;
+IF( ELLEV( sDim, sElement) > 0);
+  sMDX = '{TM1FILTERBYLEVEL({DESCENDANTS(' | sDim | '.[' | sElement | ']) }, 0)}';
+  SUBSETCREATEBYMDX(SubName, sMDX);
+ENDIF;
+IF( ELLEV( sDim, sElement) = 0);
+   SUBSETCREATE( sDim, SubName);
+   SUBSETELEMENTINSERT(sDim, SubName, sElement, 1);
+ENDIF;
+VIEWSUBSETASSIGN( Cube, ViewName, sDim, SubName);
+ENDIF;
+
+#===================
+# Map4
+
+sDim = Map4Dim;
+sElement = Map4To;
+
+IF( LONG( sDim) > 0);
+IF( SUBSETEXISTS( sDim, SubName) = 1);
+     SUBSETDESTROY( sDim, SubName);
+ENDIF;
+IF( ELLEV( sDim, sElement) > 0);
+  sMDX = '{TM1FILTERBYLEVEL({DESCENDANTS(' | sDim | '.[' | sElement | ']) }, 0)}';
+  SUBSETCREATEBYMDX(SubName, sMDX);
+ENDIF;
+IF( ELLEV( sDim, sElement) = 0);
+   SUBSETCREATE( sDim, SubName);
+   SUBSETELEMENTINSERT(sDim, SubName, sElement, 1);
+ENDIF;
+VIEWSUBSETASSIGN( Cube, ViewName, sDim, SubName);
+ENDIF;
+
+#===================
+# ZERO OUT
+
+VIEWZEROOUT( Cube, ViewName);
+
+#===================
+# CLEAN UP
+
+VIEWDESTROY( Cube, ViewName);
+
+# Clean Up Subsets
+Count = 1;
+DimCount = CELLGETN( 'VC_CubeDims', Cube, 'All Dimensions', 'DimCount');
+WHILE( Count <= DimCount);
+  sDim = TABDIM( Cube, Count);
+  IF( SUBSETEXISTS( sDim, SubName) = 1);
+       SUBSETDESTROY( sDim, SubName);
+  ENDIF;
+  Count = Count + 1;
+END;
+
+#===================
+# Set DataSource
+
+DatasourceNameForServer=FileName;
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+# Determine Value
+IF( VariableNum = 1); ValueString = V1; ENDIF;
+IF( VariableNum = 2); ValueString = V2; Measure = V1; ENDIF;
+IF( VariableNum = 3); ValueString = V3; Measure = V2; ENDIF;
+IF( VariableNum = 4); ValueString = V4; Measure = V3; ENDIF;
+IF( VariableNum = 5); ValueString = V5; Measure = V4; ENDIF;
+IF( VariableNum = 6); ValueString = V6; Measure = V5; ENDIF;
+IF( VariableNum = 7); ValueString = V7; Measure = V6; ENDIF;
+IF( VariableNum = 8); ValueString = V8; Measure = V7; ENDIF;
+IF( VariableNum = 9); ValueString = V9; Measure = V8; ENDIF;
+IF( VariableNum = 10); ValueString = V10; Measure = V9; ENDIF;
+IF( VariableNum = 11); ValueString = V11; Measure = V10; ENDIF;
+IF( VariableNum = 12); ValueString = V12; Measure = V11; ENDIF;
+IF( VariableNum = 13); ValueString = V13; Measure = V12; ENDIF;
+IF( VariableNum = 14); ValueString = V14; Measure = V13; ENDIF;
+
+
+# Determine Dtype
+DataType = Dtype( LastDim, Measure);
+IF( DataType @<> 'S');
+     Value = StringToNumber( ValueString);
+ENDIF;
+
+# Put Data into new Dimension
+CellCheck = 0;
+
+IF( VariableNum = 3);
+ IF( CellIsUpdateable( Cube, V1, V2) = 1);
+   IF( DataType @= 'S');
+      CellPutS( ValueString, Cube, V1, V2);
+   ENDIF;
+   IF( DataType @= 'N');
+      CellPutN( Value, Cube, V1, V2);
+  ENDIF;
+ ENDIF;
+ENDIF;
+
+IF( VariableNum = 4);
+ IF( CellIsUpdateable( Cube, V1, V2, V3) = 1);
+   IF( DataType @= 'S');
+      CellPutS( ValueString, Cube, V1, V2, V3);
+   ENDIF;
+   IF( DataType @= 'N');
+      CellPutN( Value, Cube, V1, V2, V3);
+  ENDIF;
+ ENDIF;
+ENDIF;
+
+IF( VariableNum = 5);
+ IF( CellIsUpdateable( Cube, V1, V2, V3, V4) = 1);
+   IF( DataType @= 'S');
+      CellPutS( ValueString, Cube, V1, V2, V3, V4);
+   ENDIF;
+   IF( DataType @= 'N');
+      CellPutN( Value, Cube, V1, V2, V3, V4);
+  ENDIF;
+ ENDIF;
+ENDIF;
+
+IF( VariableNum = 6);
+ IF( CellIsUpdateable( Cube, V1, V2, V3, V4, V5) = 1);
+   IF( DataType @= 'S');
+      CellPutS( ValueString, Cube, V1, V2, V3, V4, V5);
+   ENDIF;
+   IF( DataType @= 'N');
+      CellPutN( Value, Cube, V1, V2, V3, V4, V5);
+  ENDIF;
+ ENDIF;
+ENDIF;
+
+IF( VariableNum = 7);
+ IF( CellIsUpdateable( Cube, V1, V2, V3, V4, V5, V6) = 1);
+   IF( DataType @= 'S');
+      CellPutS( ValueString, Cube, V1, V2, V3, V4, V5, V6);
+   ENDIF;
+   IF( DataType @= 'N');
+      CellPutN( Value, Cube, V1, V2, V3, V4, V5, V6);
+  ENDIF;
+ ENDIF;
+ENDIF;
+
+IF( VariableNum = 8);
+ IF( CellIsUpdateable( Cube, V1, V2, V3, V4, V5, V6, V7) = 1);
+   IF( DataType @= 'S');
+      CellPutS( ValueString, Cube, V1, V2, V3, V4, V5, V6, V7);
+   ENDIF;
+   IF( DataType @= 'N');
+      CellPutN( Value, Cube, V1, V2, V3, V4, V5, V6, V7);
+  ENDIF;
+ ENDIF;
+ENDIF;
+
+IF( VariableNum = 9);
+ IF( CellIsUpdateable( Cube, V1, V2, V3, V4, V5, V6, V7, V8) = 1);
+   IF( DataType @= 'S');
+      CellPutS( ValueString, Cube, V1, V2, V3, V4, V5, V6, V7, V8);
+   ENDIF;
+   IF( DataType @= 'N');
+      CellPutN( Value, Cube, V1, V2, V3, V4, V5, V6, V7, V8);
+  ENDIF;
+ ENDIF;
+ENDIF;
+
+IF( VariableNum = 10);
+ IF( CellIsUpdateable( Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9) = 1);
+   IF( DataType @= 'S');
+      CellPutS( ValueString, Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9);
+   ENDIF;
+   IF( DataType @= 'N');
+      CellPutN( Value, Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9);
+  ENDIF;
+ ENDIF;
+ENDIF;
+
+IF( VariableNum = 11);
+ IF( CellIsUpdateable( Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10) = 1);
+   IF( DataType @= 'S');
+      CellPutS( ValueString, Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10);
+   ENDIF;
+   IF( DataType @= 'N');
+      CellPutN( Value, Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10);
+  ENDIF;
+ ENDIF;
+ENDIF;
+
+IF( VariableNum = 12);
+ IF( CellIsUpdateable( Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10,V11) = 1);
+   IF( DataType @= 'S');
+      CellPutS( ValueString, Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10,V11);
+   ENDIF;
+   IF( DataType @= 'N');
+      CellPutN( Value, Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10,V11);
+  ENDIF;
+ ENDIF;
+ENDIF;
+
+IF( VariableNum = 13);
+ IF( CellIsUpdateable( Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10,V11,V12) = 1);
+   IF( DataType @= 'S');
+      CellPutS( ValueString, Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10,V11,V12);
+   ENDIF;
+   IF( DataType @= 'N');
+      CellPutN( Value, Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10,V11,V12);
+  ENDIF;
+ ENDIF;
+ENDIF;
+
+IF( VariableNum = 14 );
+    vCurrentWhs = ATTRS('Customer', V9, 'Shipping_Warehouse');
+     IF( vCurrentWhs @<> '' & DIMIX('Warehouse', vCurrentWhs ) <> 0 );
+     IF( CellIsUpdateable( Cube, V1, V2, V3, V4, V5,vCurrentWhs ,V7, V8, V9, V10,V11,V12,V13) = 1);
+         IF( DataType @= 'S');
+            #CellPutS( ValueString, Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10,V11,V12,V13);
+             CellPutS( ValueString, Cube, V1, V2, V3, V4, V5,  vCurrentWhs ,V7, V8, V9, V10,V11,V12,V13);
+             
+             CellPutS( ValueString, Cube, V1, V2, V3, V4, V5,  vCurrentWhs ,V7, V8, V9, V10,V11,V12,V13);
+         ENDIF;
+       
+         IF( DataType @= 'N');
+            #CellPutN( Value, Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10,V11,V12,V13);
+             CellPutN( Value, Cube, V1, V2, V3, V4, V5, vCurrentWhs ,V7, V8, V9, V10,V11,V12,V13);
+         ENDIF;
+       ENDIF;
+
+    ENDIF;
+
+    IF( CellIsUpdateable( Cube, V1, V2, V3, V4, V5,V6 ,V7, V8, V9, V10,V11,V12,V13) = 1);
+       IF( DataType @= 'S');
+          CellPutS( ValueString, Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10,V11,V12,V13);          
+       ENDIF;
+      
+       IF( DataType @= 'N');
+          CellPutN( Value, Cube, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10,V11,V12,V13);
+       ENDIF;
+    ENDIF;
+
+ ENDIF;
+
+IF ( Cube @='Revenue_Planning_Summary' ) ;
+       ASCIIOUTPUT(   'Revenue_Summary.csv' , NumberToString( Value ),  V1, V2, V3, V4, V5, V6, V7, V8, V9, V10,V11,V12,V13);
+ENDIF;
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+CUBESETLOGCHANGES( Cube, 1);
+#endregion

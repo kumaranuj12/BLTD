@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"Default",
+	"Alias":"MEMBER_NAME",
+	"Expression":"{ORDER([Account_Type].[Account_Type].MEMBERS , [Account_Type].[Account_Type].CURRENTMEMBER.PROPERTIES(\"MEMBER_NAME\") , BDESC)}"
+}

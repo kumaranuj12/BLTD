@@ -1,0 +1,50 @@
+{
+	"@type":"NativeView",
+	"Name":"Default",
+	"Columns":
+	[
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('mDB_Configuration')/Hierarchies('mDB_Configuration')"
+				},
+				"Expression":"{[mDB_Configuration].[mDB_Configuration].MEMBERS}"
+			}
+		}
+	],
+	"Rows":
+	[
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Process Mode')/Hierarchies('Process Mode')"
+				},
+				"Expression":"{[Process Mode].[Process Mode].MEMBERS}"
+			}
+		}
+	],
+	"Titles":
+	[
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Project Phase')/Hierarchies('Project Phase')"
+				},
+				"Expression":"{[Project Phase].[Project Phase].MEMBERS}"
+			},
+			"Selected":
+			{
+				"@id":"Dimensions('Project Phase')/Hierarchies('Project Phase')/Elements('Development')"
+			}
+		}
+	],
+	"SuppressEmptyColumns":true,
+	"SuppressEmptyRows":true,
+	"FormatString":"0.00"
+}

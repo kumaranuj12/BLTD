@@ -1,0 +1,16 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Process Mode",
+	"Elements":
+	[
+		{
+			"Name":"Import",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Export",
+			"Type":"Numeric"
+		}
+	],
+	"Subsets@Code.links":[]
+}

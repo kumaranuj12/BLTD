@@ -1,0 +1,41 @@
+{
+	"@type":"Cube",
+	"Name":"Reporting_Financial",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Version')"
+		},
+		{
+			"@id":"Dimensions('Currency')"
+		},
+		{
+			"@id":"Dimensions('Company')"
+		},
+		{
+			"@id":"Dimensions('Division')"
+		},
+		{
+			"@id":"Dimensions('Department')"
+		},
+		{
+			"@id":"Dimensions('Location')"
+		},
+		{
+			"@id":"Dimensions('Time')"
+		},
+		{
+			"@id":"Dimensions('Account')"
+		},
+		{
+			"@id":"Dimensions('Measure')"
+		}
+	],
+	"Rules@Code.link":"Reporting_Financial.rules",
+	"Views@Code.links":
+	[
+		"Reporting_Financial.views/Accounting Overhead Non Labor Actual.json",
+		"Reporting_Financial.views/All Department Overhead Non Labor Actual.json",
+		"Reporting_Financial.views/Default.json"
+	]
+}

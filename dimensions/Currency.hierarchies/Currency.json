@@ -1,0 +1,28 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Currency",
+	"Elements":
+	[
+		{
+			"Name":"Local Currency",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"USD",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"EUR",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"CAD",
+			"Type":"Numeric"
+		}
+	],
+	"Subsets@Code.links":
+	[
+		"Currency.subsets/Local Currency.json",
+		"Currency.subsets/nFinancial_Reporting.cProcess.Cube.Load.nFinancial.Reporting.20260811064525.991.json"
+	]
+}

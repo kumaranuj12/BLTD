@@ -1,0 +1,75 @@
+#region Prolog
+vDim = 'Account';
+vDim1 = 'Division';
+vDim2 = 'Department';
+vDim3 = 'Location';
+vCube = 'Financial_Reporting';
+vCube1 = 'Reporting';
+vVersion = 'Actual';
+
+CubeSetLogChanges( vCube,0);
+CubeSetLogChanges( vCube1,0);
+
+
+#endregion
+#region Metadata
+
+vCurrentDiv = SUBST(vGLNumber, 5,2);
+vCurrentLoc = SUBST(vGLNumber, 7,1);
+vCurrentDept = SUBST(vGLNumber, 8,2);
+
+IF (DIMIX(vDim1, vCurrentDiv) = 0 );
+    DimensionElementComponentAddDirect(vDim1, 'All_Divisions', vCurrentDiv, 1);
+ENDIF;
+
+IF (DIMIX(vDim2, vCurrentDept) = 0 );
+    DimensionElementComponentAddDirect(vDim2, 'All_Departments', vCurrentDept, 1);
+ENDIF;
+
+IF (DIMIX(vDim3, vCurrentLoc) = 0 );
+    DimensionElementComponentAddDirect(vDim3, 'All_Locations', vCurrentLoc, 1);
+ENDIF;
+
+IF (DIMIX(vDim, vGLNumber) = 0 );
+    DimensionElementInsertDirect(vDim, '', vGLNumber, 'N');
+ENDIF;
+
+
+
+#endregion
+#region Data
+#############################################################
+# DATA - Fires for every row returned by the SQL query
+# Writes all attribute values to each leaf element
+#############################################################
+
+vCurrentAcct = vGLNumber;
+vCurrentDiv = SUBST(vGLNumber, 5,2);
+vCurrentLoc = SUBST(vGLNumber, 7,1);
+vCurrentDept = SUBST(vGLNumber, 8,2);
+vCurrentMonth = SUBST(vMonthName,1,3) |  '-' | vActualYear;
+
+
+IF (DIMIX('Time', vCurrentMonth) = 0 );
+   ITEMSKIP;
+ENDIF;
+
+
+
+CELLPUTN( Value, vCube, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, vCurrentMonth, vCurrentAcct, 'Amount' );
+
+
+
+
+### update Reporting Cube data ###
+
+CELLPUTN( Value, vCube1, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, vCurrentMonth, vAcctType, vCurrentAcct, 'Amount' );
+
+
+
+
+#endregion
+#region Epilog
+CubeSetLogChanges( vCube,1);
+CubeSetLogChanges( vCube1,1);
+#endregion

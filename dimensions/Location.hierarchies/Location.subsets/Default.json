@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"Default",
+	"Alias":"Caption",
+	"Expression":"{DISTINCT(DESCENDANTS([Location].[Location].[All_Locations]))}"
+}

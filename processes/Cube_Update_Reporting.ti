@@ -1,0 +1,51 @@
+#region Prolog
+vDim = 'Account';
+vDim1 = 'Segment2';
+vCube  = 'Reporting';
+vVersion = 'Budget';
+
+#CubeClearData( vCube );
+
+#endregion
+#region Metadata
+
+
+DimensionElementComponentAddDirect(vDim1, 'All_Segments', vSegment2, 1);
+
+
+
+#endregion
+#region Data
+#############################################################
+# DATA - Fires for every row returned by the SQL query
+# Writes all attribute values to each leaf element
+#############################################################
+
+vCurrentAcct = vSegment1;
+
+ATTRPUTS(vSegment2 | ' - ' | vSegment, vDim1, vSegment2, 'Caption');
+
+CELLPUTN( vJan, vCube, vVersion,'Local_Currency' ,vCompany, vSegment2, 'Jan-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vFeb, vCube, vVersion,'Local_Currency' ,vCompany, vSegment2, 'Feb-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vMar, vCube, vVersion,'Local_Currency' ,vCompany, vSegment2, 'Mar-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vApr, vCube, vVersion,'Local_Currency' ,vCompany, vSegment2, 'Apr-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vMay, vCube, vVersion,'Local_Currency' ,vCompany, vSegment2, 'May-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vJun, vCube, vVersion,'Local_Currency' ,vCompany, vSegment2, 'Jun-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vJul, vCube, vVersion,'Local_Currency' ,vCompany, vSegment2, 'Jul-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vAug, vCube, vVersion,'Local_Currency' ,vCompany, vSegment2, 'Aug-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vSep, vCube, vVersion,'Local_Currency' ,vCompany, vSegment2, 'Sep-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vOct, vCube, vVersion,'Local_Currency' ,vCompany, vSegment2, 'Oct-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vNov, vCube, vVersion,'Local_Currency' ,vCompany, vSegment2, 'Nov-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vDec, vCube, vVersion,'Local_Currency' ,vCompany, vSegment2, 'Dec-' | pYear, vCurrentAcct, 'Amount' );
+#endregion

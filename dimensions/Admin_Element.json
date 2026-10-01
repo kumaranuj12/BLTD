@@ -1,0 +1,12 @@
+{
+	"@type":"Dimension",
+	"Name":"Admin_Element",
+	"Hierarchies@Code.links":
+	[
+		"Admin_Element.hierarchies/Admin_Element.json"
+	],
+	"DefaultHierarchy":
+	{
+		"@id":"Dimensions('Admin_Element')/Hierarchies('Admin_Element')"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"@type":"Subset",
+	"Name":"INVEST RECOVERY",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Corpus Christi')"
+		}
+	]
+}

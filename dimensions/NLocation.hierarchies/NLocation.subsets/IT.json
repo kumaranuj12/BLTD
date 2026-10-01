@@ -1,0 +1,13 @@
+{
+	"@type":"Subset",
+	"Name":"IT",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Louisiana')"
+		},
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Corpus Christi')"
+		}
+	]
+}

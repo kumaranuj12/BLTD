@@ -1,0 +1,25 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Version",
+	"Elements":
+	[
+		{
+			"Name":"Actual",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Budget",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Forecast",
+			"Type":"Numeric"
+		}
+	],
+	"Subsets@Code.links":
+	[
+		"Version.subsets/Budget.json",
+		"Version.subsets/Default.json",
+		"Version.subsets/nFinancial_Reporting.cProcess.Cube.Load.nFinancial.Reporting.20260811064525.991.json"
+	]
+}

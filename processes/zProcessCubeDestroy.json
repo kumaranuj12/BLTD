@@ -1,0 +1,21 @@
+{
+	"@type":"Process",
+	"Name":"zProcessCubeDestroy",
+	"HasSecurityAccess":false,
+	"Code@Code.link":"zProcessCubeDestroy.ti",
+	"UIData":"_ParameterConstraints=e30=\f",
+	"DataSource":
+	{
+		"Type":"None"
+	},
+	"Parameters":
+	[
+		{
+			"Name":"pCubeName",
+			"Prompt":"",
+			"Value":"",
+			"Type":"String"
+		}
+	],
+	"Variables":[]
+}

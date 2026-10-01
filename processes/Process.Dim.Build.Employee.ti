@@ -1,0 +1,105 @@
+#region Prolog
+#================================ Open ODBC Connection =========================#
+
+# Get server type configuration
+
+  sServerType =    CellGetS( 'Admin', 'Server Type','String');
+
+# Check RunMode if Development 1 or Production 2 to retrive server name
+   
+   If ( sServerType @= 'Dev' );
+       sODBCname = CellGetS( 'Sys DB Configuration', 'Development','Import','ODBC Name' );
+       sUser = CellGetS( 'Sys DB Configuration',  'Development', 'Import', 'User' );
+       sPassword = CellGetS( 'Sys DB Configuration', 'Development', 'Import', 'Password' );
+   ElseIf ( sServerType @= 'Prod' );
+     sODBCname = CellGetS( 'Sys DB Configuration', 'Production','Import','ODBC Name' );
+       sUser = CellGetS( 'Sys DB Configuration', 'Production', 'Import', 'User' );
+       sPassword = CellGetS( 'Sys DB Configuration', 'Production', 'Import', 'Password' );
+   Else;
+       ProcessQuit;
+   EndIf;
+sSql='SELECT *
+  FROM [CMSFIL_Historical_GL].[dbo].[Employee_Headcount]';
+DataSourceType= 'ODBC' ; 
+DataSourceNameForServer = sODBCname ;
+DatasourceUserName = sUser  ; 
+DatasourcePassword = sPassword ;
+DatasourceQuery =sSql;
+
+###########################################Employee Diemnesion buid************ and insert 
+sDimName='Employee Details';
+sDimElement='Total Employees';
+sDimAtt='}ElementAttributes_'|sDimName;
+IF(DimensionExists(sDimName)<>0);
+    DimensionDestroy( sDimName );
+    DimensionCreate( sDimName );
+ENDIF;
+
+IF(DIMIX( sDimName,sDimElement)=0);
+     DIMENSIONELEMENTINSERTDIRECT ( sDimName , '' , sDimElement , 'C' );
+ ENDIF;
+sAttrName = 'Caption';
+IF ( DIMIX (sDimAtt, sAttrName ) = 0);
+    ATTRINSERT ( sDimName,'', sAttrName ,'A');
+ENDIF;
+
+sAttrName = 'Name';
+IF ( DIMIX (sDimAtt, sAttrName ) = 0);
+    ATTRINSERT ( sDimName,'', sAttrName ,'S');
+ENDIF;
+sAttrName = 'Manager';
+IF ( DIMIX (sDimAtt, sAttrName ) = 0);
+    ATTRINSERT ( sDimName,'', sAttrName ,'S');
+ENDIF;
+
+sAttrName = 'Position';
+IF ( DIMIX (sDimAtt, sAttrName ) = 0);
+    ATTRINSERT ( sDimName,'', sAttrName ,'S');
+ENDIF;
+
+sAttrName = 'PayFrequency';
+IF ( DIMIX (sDimAtt, sAttrName ) = 0);
+    ATTRINSERT ( sDimName,'', sAttrName ,'S');
+ENDIF;
+
+sAttrName = 'Hire Date';
+IF ( DIMIX (sDimAtt, sAttrName ) = 0);
+    ATTRINSERT ( sDimName,'', sAttrName ,'S');
+ENDIF;
+sAttrName = 'Active';
+IF ( DIMIX (sDimAtt, sAttrName ) = 0);
+    ATTRINSERT ( sDimName,'', sAttrName ,'S');
+ENDIF;
+
+sAttrName = 'Department';
+IF ( DIMIX (sDimAtt, sAttrName ) = 0);
+    ATTRINSERT ( sDimName,'', sAttrName ,'S');
+ENDIF;
+sAttrName = 'Division';
+IF ( DIMIX (sDimAtt, sAttrName ) = 0);
+    ATTRINSERT ( sDimName,'', sAttrName ,'S');
+ENDIF;
+#endregion
+#region Metadata
+
+IF(DIMIX( sDimName,vEmployeeNumber)=0 & vEmployeeNumber @<>'');
+     DIMENSIONELEMENTINSERTDIRECT ( sDimName , '' ,vEmployeeNumber , 'N' );
+    DimensionElementComponentAddDirect( sDimName, sDimElement, vEmployeeNumber,1 );
+ ENDIF;
+   
+#endregion
+#region Data
+
+IF(DIMIX( sDimName,vEmployeeNumber)<>0 & vEmployeeNumber @<>'');
+     AttrPutS( vEmployeeNumber | ' - ' | vEmployeeName, sDimName, vEmployeeNumber, 'Caption' );
+    AttrPutS( vEmployeeName, sDimName, vEmployeeNumber, 'Name' );
+    AttrPutS( vSupervisorName, sDimName, vEmployeeNumber, 'Manager' );
+    AttrPutS( vOrigHireDate, sDimName, vEmployeeNumber, 'Hire Date' );
+    AttrPutS( vDivision, sDimName, vEmployeeNumber, 'Division' );
+    AttrPutS( vDepartmentDescription, sDimName, vEmployeeNumber, 'Department' );
+    AttrPutS( vPayFequ, sDimName, vEmployeeNumber, 'PayFrequency' );
+	AttrPutS( vClassDescription, sDimName, vEmployeeNumber, 'Position' );
+    AttrPutS( 'Yes', sDimName, vEmployeeNumber, 'Active' );
+ ENDIF;
+ 
+#endregion

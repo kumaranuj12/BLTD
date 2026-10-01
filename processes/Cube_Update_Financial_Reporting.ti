@@ -1,0 +1,105 @@
+#region Prolog
+
+################# Anuj Kumar -- 12-06-26 (dd-mm-yy)Excute the process to updte the  account dimension before loading the data for Report.
+
+ExecuteProcess( 'Dimension_Update_Account');
+
+#########################
+vDim = 'Account';
+vDim1 = 'Division';
+vDim2 = 'Department';
+vDim3 = 'Location';
+vCube = 'Financial_Reporting';
+vCube1 = 'Reporting';
+vVersion = 'Actual';
+
+#CubeClearData( vCube );
+
+#endregion
+#region Metadata
+
+#vCurrentDiv = SUBST(vSegment2, 1,2);
+#vCurrentLoc = SUBST(vSegment2, 3,1);
+#vCurrentDept = SUBST(vSegment2, 4,2);
+
+#IF (DIMIX(vDim1, vCurrentDiv) = 0 );
+  #  DimensionElementComponentAddDirect(vDim1, 'All_Divisions', vCurrentDiv, 1);
+#ENDIF;
+
+#IF (DIMIX(vDim2, vCurrentDept) = 0 );
+  #  DimensionElementComponentAddDirect(vDim2, 'All_Departments', vCurrentDept, 1);
+#ENDIF;
+
+#IF (DIMIX(vDim3, vCurrentLoc) = 0 );
+  #  DimensionElementComponentAddDirect(vDim3, 'All_Locations', vCurrentLoc, 1);
+#ENDIF;
+
+#endregion
+#region Data
+#############################################################
+# DATA - Fires for every row returned by the SQL query
+# Writes all attribute values to each leaf element
+#############################################################
+
+vCurrentAcct = vGL_Number;
+vCurrentDiv = SUBST(vSegment2, 1,2);
+vCurrentLoc = SUBST(vSegment2, 3,1);
+vCurrentDept = SUBST(vSegment2, 4,2);
+
+
+
+
+CELLPUTN( vJan, vCube, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Jan-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vFeb, vCube, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Feb-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vMar, vCube, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Mar-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vApr, vCube, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Apr-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vMay, vCube, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'May-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vJun, vCube, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Jun-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vJul, vCube, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Jul-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vAug, vCube, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Aug-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vSep, vCube, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Sep-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vOct, vCube, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Oct-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vNov, vCube, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Nov-' | pYear, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vDec, vCube, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Dec-' | pYear, vCurrentAcct, 'Amount' );
+
+
+### update Reporting Cube data ###
+
+CELLPUTN( vJan, vCube1, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Jan-' | pYear, vAcctType, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vFeb, vCube1, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Feb-' | pYear, vAcctType, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vMar, vCube1, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Mar-' | pYear, vAcctType, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vApr, vCube1, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Apr-' | pYear, vAcctType, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vMay, vCube1, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'May-' | pYear, vAcctType, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vJun, vCube1, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Jun-' | pYear, vAcctType, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vJul, vCube1, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Jul-' | pYear, vAcctType, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vAug, vCube1, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Aug-' | pYear, vAcctType, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vSep, vCube1, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Sep-' | pYear, vAcctType, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vOct, vCube1, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Oct-' | pYear, vAcctType, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vNov, vCube1, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Nov-' | pYear, vAcctType, vCurrentAcct, 'Amount' );
+
+CELLPUTN( vDec, vCube1, vVersion,'Local_Currency' ,vCompany, vCurrentDiv,VCurrentDept, vCurrentLoc, 'Dec-' | pYear, vAcctType, vCurrentAcct, 'Amount' );
+
+
+
+#endregion

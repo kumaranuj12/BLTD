@@ -1,0 +1,165 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+
+vDimName = 'Time';
+vCube = '}ElementAttributes_Time';
+
+      vNumeric_Month = 0;
+
+
+#### Check if Attributes Exist or create them ###
+
+
+vsAttribute1 = 'Year';
+IF ( DIMIX ('}Element_Attributes_' | vDimName, vsAttribute1 ) = 0);
+    ATTRINSERT ( vDimName,'', vsAttribute1 ,'S');
+ENDIF;
+
+vsAttribute2 = 'Next_year';
+IF ( DIMIX ('}Element_Attributes_' | vDimName, vsAttribute2 ) = 0);
+    ATTRINSERT ( vDimName,'', vsAttribute2 ,'S');
+ENDIF;
+
+vsAttribute3 = 'Prev_Year';
+IF ( DIMIX ('}Element_Attributes_' | vDimName, vsAttribute3 ) = 0);
+    ATTRINSERT ( vDimName,'', vsAttribute3 ,'S');
+ENDIF;
+
+vsAttribute4 = 'PY';
+IF ( DIMIX ('}Element_Attributes_' | vDimName, vsAttribute4 ) = 0);
+    ATTRINSERT ( vDimName,'', vsAttribute4 ,'S');
+ENDIF;
+
+vsAttribute5 = 'Input_Year';
+IF ( DIMIX ('}Element_Attributes_' | vDimName, vsAttribute5 ) = 0);
+    ATTRINSERT ( vDimName,'', vsAttribute5 ,'S');
+ENDIF;
+
+vsAttribute6 = 'PY_Month';
+IF ( DIMIX ('}Element_Attributes_' | vDimName, vsAttribute6 ) = 0);
+    ATTRINSERT ( vDimName,'', vsAttribute6 ,'S');
+ENDIF;
+
+vsAttribute7 = 'NY_Month';
+IF ( DIMIX ('}Element_Attributes_' | vDimName, vsAttribute7 ) = 0);
+    ATTRINSERT ( vDimName,'', vsAttribute7 ,'S');
+ENDIF;
+
+vsAttribute8 = 'Prev_Month';
+IF ( DIMIX ('}Element_Attributes_' | vDimName, vsAttribute8 ) = 0);
+    ATTRINSERT ( vDimName,'', vsAttribute8 ,'S');
+ENDIF;
+
+
+vsAttribute9 = 'Next_Month';
+IF ( DIMIX ('}Element_Attributes_' | vDimName, vsAttribute9 ) = 0);
+    ATTRINSERT ( vDimName,'', vsAttribute9 ,'S');
+ENDIF;
+
+vsAttribute10 = 'Current_Month';
+IF ( DIMIX ('}Element_Attributes_' | vDimName, vsAttribute10 ) = 0);
+    ATTRINSERT ( vDimName,'', vsAttribute10 ,'S');
+ENDIF;
+
+vnAttribute11 = 'Numeric_Month';
+IF ( DIMIX ('}Element_Attributes_' | vDimName, vnAttribute11 ) = 0);
+    ATTRINSERT ( vDimName,'', vnAttribute11 ,'N');
+ENDIF;
+
+
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+IF( STRINGTONUMBER(SUBST(vTime, LONG(vTime)-4, 4) )  >2025 );
+    ITEMSKIP;
+ENDIF;
+
+
+IF( vTime @= 'All_Years' % vTime @= 'Total_FY' % vTime @= 'All_YTDs');
+    ITEMSKIP;
+ENDIF; 
+
+IF( SUBST(vTime,1,2) @<> 'FY');
+   vNumeric_Month = ATTRN('Month', SUBST(vTime,1,2), 'MonthNumber');
+ELSE;
+  vNumeric_Month = 0;
+ENDIF;
+
+   
+  
+IF ( Scan ('Input', vTime) = 0 & DTYPE(vDimname, vTime) @= 'N' );
+   vYear =   SUBST(ELPAR('Time', vTime, 1),4,4);
+   vPY_Month = TRIM( SUBST(vTime, 1,2) | '-' | NUMBERTOSTRING( STRINGTONUMBER(SUBST(vTime, 4,4)) - 1));
+   vNY_month = TRIM(SUBST (vTime, 1,2) | '-' | NUMBERTOSTRING( STRINGTONUMBER(SUBST(vTime, 4,4)) + 1));
+   vCurrent_Month = vTime;
+    IF ( SUBST( vTime,1,2) @= '12');
+         vPrev_Month = TRIM(ATTRS('Month',  SUBST(vTime, 1,2), 'PrevMonth')  | '-' |NUMBERTOSTRING( STRINGTONUMBER(SUBST(vTime, 4,4)) ));
+        vNext_month = TRIM(ATTRS('Month',  SUBST(vTime, 1,2), 'NextMonth') | '-' |NUMBERTOSTRING( STRINGTONUMBER(SUBST(vTime, 4,4)) + 1));
+    ELSEIF ( SUBST( vTime,1,2) @= '01');
+         vPrev_Month = TRIM(ATTRS('Month',  SUBST(vTime, 1,2), 'PrevMonth')  | '-' |NUMBERTOSTRING( STRINGTONUMBER(SUBST(vTime, 4,4)) -1));
+        vNext_month = TRIM(ATTRS('Month',  SUBST(vTime, 1,2), 'NextMonth') | '-' |NUMBERTOSTRING( STRINGTONUMBER(SUBST(vTime, 4,4)) ));
+         ELSE;
+       vPrev_Month = TRIM(ATTRS('Month',  SUBST(vTime, 1,2), 'PrevMonth')  | '-' |  SUBST(vTime, 4,4) );
+       vNext_month = TRIM(ATTRS('Month',  SUBST(vTime, 1,2),  'NextMonth')  | '-' |SUBST(vTime, 4,4) );
+     ENDIF;
+
+ELSEIF( Scan ('Input',vTime) = 0 & DTYPE(vDimname,  vTime) @<> 'N' );
+    vYear =TRIM( SUBST(vTime,4,4));
+    vCurrent_Month = vTIme;
+#    vPY_Month = TRIM( SUBST(vTime, 1,2) | '-' |NUMBERTOSTRING( STRINGTONUMBER(vYear) -1));
+    vPY_Month = TRIM( SUBST(vTime, 1,2) | '-' |NUMBERTOSTRING( STRINGTONUMBER(vYear) ));
+    vNY_month = TRIM(SUBST (vTime, 1,2) | '-' |NUMBERTOSTRING( STRINGTONUMBER(vYear) + 1));
+     IF ( SUBST( vTime,1,2) @= 'Q1');
+          vPrev_Month = TRIM( ATTRS('Month',  SUBST(vTime, 1,2), 'PrevMonth') | '-' | NUMBERTOSTRING( STRINGTONUMBER(vYear) - 1));
+          vNext_month = TRIM(ATTRS('Month',  SUBST(vTime, 1,2), 'NextMonth') | '-' | SUBST(vTime, 4,4));
+     ELSEIF(SUBST( vTime,1,2) @= 'Q4');  
+          vPrev_Month = TRIM( ATTRS('Month',  SUBST(vTime, 1,2), 'PrevMonth') | '-' | SUBST(vTime, 4,4));
+          vNext_month = TRIM( ATTRS('Month',  SUBST(vTime, 1,2),  'NextMonth') | '-' |NUMBERTOSTRING( STRINGTONUMBER(vYear) + 1));
+     ELSEIF(SUBST( vTime,1,2) @= 'FY');
+            vPrev_Month = TRIM( 'FY' | '-' |  NUMBERTOSTRING( STRINGTONUMBER(SUBST(vTime, 4,4)) - 1));
+            vNext_month = TRIM( 'FY' | '-' |  NUMBERTOSTRING( STRINGTONUMBER(SUBST(vTime, 4,4)) + 1));
+     ELSE;
+           vPrev_Month = TRIM(ATTRS('Month',  SUBST(vTime, 1,2), 'PrevMonth')  | '-' |  SUBST(vTime, 4,4) );
+          vNext_month = TRIM(ATTRS('Month',  SUBST(vTime, 1,2),  'NextMonth')  | '-' |SUBST(vTime, 4,4) );
+    ENDIF;
+ELSEIF( Scan ('Input',vTime) > 0 & DTYPE(vDimname,  vTime) @= 'N');
+    vYear = TRIM( SUBST(vTime,4,4));
+    vCurrent_Month = TRIM( SUBST(vTime,7,7));
+    vPY_Month =TRIM(  'FY' | '-' |NUMBERTOSTRING( STRINGTONUMBER(vYear) - 1) );
+    vNY_Month = TRIM( 'FY' | '-' |NUMBERTOSTRING( STRINGTONUMBER(vYear) + 1) );
+    vPrev_Month =TRIM(  'FY' | '-' |NUMBERTOSTRING( STRINGTONUMBER(vYear) - 1) );
+    vNext_Month = TRIM( 'FY' | '-' |NUMBERTOSTRING( STRINGTONUMBER(vYear) + 1) );
+ENDIF;	
+
+vNext_Year =TRIM( NUMBERTOSTRING( STRINGTONUMBER(vYear) + 1) );
+vPrev_Year =TRIM( NUMBERTOSTRING( STRINGTONUMBER(vYear) - 1) );
+vInput_Year =TRIM( 'FY ' | vYear) ;
+
+
+CELLPUTS( vYear , vCube,vTime, vsAttribute1 );
+CELLPUTS( vNext_Year , vCube,vTime, vsAttribute2 );
+CELLPUTS( vPrev_Year , vCube,vTime, vsAttribute3);
+CELLPUTS( vPrev_Year , vCube,vTime, vsAttribute4 );
+CELLPUTS( vInput_Year , vCube,vTime, vsAttribute5 );
+CELLPUTS( vPY_Month , vCube,vTime, vsAttribute6 );
+CELLPUTS( vNY_Month , vCube,vTime, vsAttribute7 );
+CELLPUTS( vPrev_Month , vCube,vTime, vsAttribute8 );
+CELLPUTS( vNext_Month , vCube,vTime, vsAttribute9 );
+CELLPUTS( vCurrent_Month , vCube,vTime, vsAttribute10 );
+CELLPUTN( vNumeric_Month , vCube,vTime, vnAttribute11 );
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion

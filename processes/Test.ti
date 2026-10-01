@@ -1,0 +1,3 @@
+#region Data
+ASCIIOutput( 'Anuj.csv' ,NumberToString( vJan),NumberToString( vfeb ),NumberToString( vMar ),NumberToString( vApr ),NumberToString( vMay ),NumberToString( vJun ),NumberToString( vJul ),NumberToString( vAug ),NumberToString( vSep ),NumberToString( vOct ),NumberToString( vNov ),NumberToString( vDec ),NumberToString( vActualYear) );
+#endregion

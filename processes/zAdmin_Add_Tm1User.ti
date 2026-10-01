@@ -1,0 +1,24 @@
+#region Prolog
+# Add the new client/user to the server
+AddClient( 'KumarS' );
+AddClient( 'TorresO' );
+AddClient( 'JackS' );
+AddClient( 'GuzmanM' );
+AddClient( 'MelendezM' );
+AddClient( 'test' );
+
+
+# Set the password for the new client
+AssignClientPassword( 'KumarS' ,'apple');
+AssignClientPassword( 'TorresO' ,'apple');
+AssignClientPassword( 'JackS' ,'apple');
+AssignClientPassword( 'GuzmanM' ,'apple');
+AssignClientPassword( 'MelendezM' ,'apple');
+AssignClientPassword( 'test' ,'apple');
+
+# Optional: Add user to a specific group
+# AssignClientToGroup( pUser, 'GroupName' );
+
+# Refresh security for changes to take effect
+SecurityRefresh;
+#endregion

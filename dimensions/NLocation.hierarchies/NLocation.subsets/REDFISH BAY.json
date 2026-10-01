@@ -1,0 +1,10 @@
+{
+	"@type":"Subset",
+	"Name":"REDFISH BAY",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Corpus Christi')"
+		}
+	]
+}

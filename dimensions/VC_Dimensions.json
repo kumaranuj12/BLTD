@@ -1,0 +1,12 @@
+{
+	"@type":"Dimension",
+	"Name":"VC_Dimensions",
+	"Hierarchies@Code.links":
+	[
+		"VC_Dimensions.hierarchies/VC_Dimensions.json"
+	],
+	"DefaultHierarchy":
+	{
+		"@id":"Dimensions('VC_Dimensions')/Hierarchies('VC_Dimensions')"
+	}
+}

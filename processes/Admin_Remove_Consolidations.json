@@ -1,0 +1,21 @@
+{
+	"@type":"Process",
+	"Name":"Admin_Remove_Consolidations",
+	"HasSecurityAccess":false,
+	"Code@Code.link":"Admin_Remove_Consolidations.ti",
+	"UIData":"_ParameterConstraints=e30=\f",
+	"DataSource":
+	{
+		"Type":"None"
+	},
+	"Parameters":
+	[
+		{
+			"Name":"pDim",
+			"Prompt":"Enter Dimension name?",
+			"Value":"",
+			"Type":"String"
+		}
+	],
+	"Variables":[]
+}

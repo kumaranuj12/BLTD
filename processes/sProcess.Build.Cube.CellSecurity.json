@@ -1,0 +1,13 @@
+{
+	"@type":"Process",
+	"Name":"sProcess.Build.Cube.CellSecurity",
+	"HasSecurityAccess":false,
+	"Code@Code.link":"sProcess.Build.Cube.CellSecurity.ti",
+	"UIData":"_ParameterConstraints=e30=\f",
+	"DataSource":
+	{
+		"Type":"None"
+	},
+	"Parameters":[],
+	"Variables":[]
+}

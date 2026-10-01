@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"Leaf",
+	"Alias":"Caption",
+	"Expression":"{EXCEPT(TM1FILTERBYLEVEL(TM1SUBSETALL([Department].[Department]) , 0) , {[Department].[Department].[NA_Department]} , ALL)}"
+}

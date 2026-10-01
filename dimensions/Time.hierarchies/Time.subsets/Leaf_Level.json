@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"Leaf_Level",
+	"Alias":"Caption",
+	"Expression":"{TM1FILTERBYLEVEL(TM1SUBSETALL([Time].[Time]) , 0)}"
+}

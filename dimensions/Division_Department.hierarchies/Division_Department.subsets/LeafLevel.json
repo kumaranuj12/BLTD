@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"LeafLevel",
+	"Alias":"Caption",
+	"Expression":"{TM1FILTERBYLEVEL(TM1SUBSETALL([Division_Department].[Division_Department]), 0)}"
+}

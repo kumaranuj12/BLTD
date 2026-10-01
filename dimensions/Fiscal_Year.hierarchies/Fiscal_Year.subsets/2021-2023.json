@@ -1,0 +1,16 @@
+{
+	"@type":"Subset",
+	"Name":"2021-2023",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('Fiscal_Year')/Hierarchies('Fiscal_Year')/Elements('2021')"
+		},
+		{
+			"@id":"Dimensions('Fiscal_Year')/Hierarchies('Fiscal_Year')/Elements('2022')"
+		},
+		{
+			"@id":"Dimensions('Fiscal_Year')/Hierarchies('Fiscal_Year')/Elements('2023')"
+		}
+	]
+}

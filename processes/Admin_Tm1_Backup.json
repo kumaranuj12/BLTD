@@ -1,0 +1,13 @@
+{
+	"@type":"Process",
+	"Name":"Admin_Tm1_Backup",
+	"HasSecurityAccess":false,
+	"Code@Code.link":"Admin_Tm1_Backup.ti",
+	"UIData":"_ParameterConstraints=e30=\f",
+	"DataSource":
+	{
+		"Type":"None"
+	},
+	"Parameters":[],
+	"Variables":[]
+}

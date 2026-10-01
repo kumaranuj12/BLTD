@@ -1,0 +1,103 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+# This Process Copys One version to another
+# If the Version is to be Static then the Rule Flag
+# Needs to be Set to 0
+
+# Map1
+Map1Dim = pMap1Dim;
+Map1From = pMap1From;
+Map1To =  pMap1To;
+
+# Map2
+Map2Dim = pMap2Dim;
+Map2From = pMap2From;
+Map2To = pMap2To;
+
+# Map3
+Map3Dim = pMap3Dim;
+Map3From = pMap3From;
+Map3To =  pMap3To;
+
+# Rule Flag - Active Versions set to 1, Static Versions set to 0
+# Static versions are any that are not a member of the "Active Versons" rollup in the Version
+# Dimension
+
+RuleFlag = pRuleFlag;
+
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+# Ignore Control Cubes
+IF( SUBST( Cube, 1, 1) @= '}');
+   ITEMSKIP;
+ENDIF;
+
+ASCIIOUTPUT('testCubeNames.csv' , Cube);
+
+pCube = Cube;
+
+
+Count = 1;
+MaxDims = CELLGETN( 'VC_CubeDims', Cube, 'All Dimensions', 'DimCount');
+Dim1Found = 0;
+Dim2Found = 0;
+Dim3Found = 0;
+
+WHILE( Count <= MaxDims);
+
+# Get Dim Name
+DimName = CELLGETS( 'VC_CubeDims', Cube, NumberToString( Count), 'DimName');
+
+IF( UPPER( DimName) @= UPPER( Map1Dim) );
+   Dim1Found = Dim1Found + 1;
+ENDIF;
+
+IF(  UPPER( DimName) @= UPPER( Map2Dim) % Map2Dim@='')  ;
+     Dim2Found = Dim2Found + 1;
+ENDIF;
+
+IF ( UPPER( DimName) @= UPPER( Map3Dim)  % Map3Dim@='');
+     Dim3Found = Dim3Found + 1;
+ENDIF;
+
+
+Count = Count + 1;
+END;
+
+IF( Dim1Found >= 1 & Dim2Found >= 1 & Dim2Found >= 1  );
+EXECUTEPROCESS( 'Admin_VC_Export','pCube',pCube,
+'Map1Dim',Map1Dim,'Map1From',Map1From,'Map1To',Map1To,
+'Map2Dim',Map2Dim,'Map2From',Map2From,'Map2To',Map2To,
+'Map3Dim',Map3Dim,'Map3From',Map3From,'Map3To',Map3To,
+'RuleFlag',RuleFlag
+ );
+
+EXECUTEPROCESS( 'Admin_VC_Import','pCube',pCube,
+'Map1Dim',Map1Dim,'Map1From',Map1From,'Map1To',Map1To,
+'Map2Dim',Map2Dim,'Map2From',Map2From,'Map2To',Map2To,
+'Map3Dim',Map3Dim,'Map3From',Map3From,'Map3To',Map3To
+);
+
+#EXECUTEPROCESS( 'Admin_VC_File_Cleanup', 'pFile', 'VC_Export_' | pCube | '.cma');
+   ASCIIOUTPUT( 'VC_Cubes.cma', Cube);
+ENDIF;
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+#EXECUTEPROCESS('ADMIN - Process Feeders');
+#endregion

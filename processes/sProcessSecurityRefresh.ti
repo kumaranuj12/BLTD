@@ -1,0 +1,7 @@
+#region Prolog
+SecurityRefresh;
+#endregion
+#region Epilog
+SaveDataAll;
+
+#endregion

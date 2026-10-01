@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"Non Labor",
+	"Alias":"MEMBER_NAME",
+	"Expression":"{FILTER(TM1SUBSETALL([Account].[Account]) , ([Account].[Account].CURRENTMEMBER.PROPERTIES(\"Account_Type\") = \"NON LABOR\"))}"
+}

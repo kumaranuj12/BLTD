@@ -1,0 +1,16 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Project Phase",
+	"Elements":
+	[
+		{
+			"Name":"Development",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Production",
+			"Type":"Numeric"
+		}
+	],
+	"Subsets@Code.links":[]
+}

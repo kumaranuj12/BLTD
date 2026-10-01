@@ -1,0 +1,5 @@
+{
+	"@type":"Subset",
+	"Name":"nFinancial_Reporting.cProcess.Cube.Load.nFinancial.Reporting.20260811064525.991",
+	"Expression":"{[Currency].[Local Currency]}"
+}

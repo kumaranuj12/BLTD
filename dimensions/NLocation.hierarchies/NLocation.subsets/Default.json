@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"Default",
+	"Alias":"Caption",
+	"Expression":"{[NLocation].[NLocation].MEMBERS}"
+}

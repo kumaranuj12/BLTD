@@ -1,0 +1,93 @@
+#region Prolog
+vDimDiv = 'Division_Department';
+vDimLoc='NLocation';
+sTopParent='All_Divisions_Department';
+sParentLoc='All_Locations';
+sParentDep='All_Department';
+sParEleType='C';
+sParentDiv='All_Divisions';
+
+
+IF(DimensionExists( vDimDiv )=0);
+        DimensionCreate( vDimDiv );
+ENDIF;
+IF(DimensionExists( vDimLoc )=0);
+        DimensionCreate( vDimLoc );
+ENDIF;
+IF( DIMIX( vDimDiv, sTopParent )=0);
+    DimensionElementInsertDirect( vDimDiv, '',sTopParent, sParEleType );
+ENDIF;
+########## Parent Element add###########
+IF( DIMIX( vDimLoc ,sParentLoc )=0);
+    DimensionElementInsertDirect( vDimLoc, '',sParentLoc, sParEleType );
+ENDIF;
+ IF( DIMIX( vDimDiv, sParentDiv )=0);
+    	DimensionElementInsertDirect( vDimDiv, '',sParentDiv, sParEleType );
+    	DimensionElementComponentAddDirect(vDimDiv, sTopParent, sParentDiv,1);	
+    ENDIF;
+IF( DIMIX( vDimDiv, sParentDep )=0);
+    	DimensionElementInsertDirect( vDimDiv, '',sParentDep, sParEleType );
+    	DimensionElementComponentAddDirect(vDimDiv, sTopParent, sParentDep,1);	
+    ENDIF;
+#endregion
+#region Metadata
+sElement=trim(vDivDep);
+IF (vType @= 'Division');
+    sParent=sParentDiv;   
+    vType=vDimDiv;
+ELSEIF (vType @= 'Department');
+			sParent=sParentDep;   
+    		vType=vDimDiv;
+ELSE;
+    ItemSkip;
+ ENDIF;  
+IF(DIMIX( vDimLoc, vLoc)=0 & vLoc @<>'');
+     		DimensionElementInsertDirect( vDimLoc, '',vLoc, 'N' );
+            DimensionElementComponentAddDirect(vDimLoc, sParentLoc, vLoc,1);
+ENDIF;
+
+  IF(DIMIX( vType, sElement )=0);
+            DimensionElementInsertDirect( vType, '',sElement, 'N' );
+            DimensionElementComponentAddDirect(vType, sParent, sElement,1);     
+    ENDIF;   
+sAttDim='}ElementAttributes_'|vType;
+If(Dimix(sAttDim,'Caption')=0);
+ 		AttrInsert( vType, '', 'Caption', 'A' );
+    ENDIF;
+If(Dimix(sAttDim,'Type')=0);
+        AttrInsert( vType, '','Type', 'S' );
+ENDIF;
+sAttDim='}ElementAttributes_'|vDimLoc;
+If(Dimix(sAttDim,'Caption')=0);
+ 		AttrInsert( vDimLoc, '', 'Caption', 'A' );
+    ENDIF;
+
+IF(SubsetExists( vDimLoc,sElement)=0 );
+		SubsetCreate( vDimLoc, sElement);
+ENDIF;
+#endregion
+#region Data
+sElement=trim(vDivDep);
+IF (vType @= 'Division');
+    sParent=sParentDiv;   
+    vDimType=vDimDiv;
+ELSEIF (vType @= 'Department');
+			sParent=sParentDep;   
+    		vDimType=vDimDiv;
+ELSE;
+    ItemSkip;
+ ENDIF;   	
+	AttrPutS( vType, vDimType, sElement, 'Type');
+	AttrPutS( vDivDep, vDimType, sElement, 'Caption');
+	AttrPutS( vLoc, vDimLoc, vLoc, 'Caption');
+
+IF( SubsetExists(vDimLoc, sElement ) =1 );
+    IF(SubsetElementExists( vDimLoc, sElement, vLoc)=0);
+    	SubsetElementInsert( vDimLoc, sElement, vloc, 1 );
+    ENDIF;
+    ENDIF;
+
+#endregion
+#region Epilog
+
+#endregion

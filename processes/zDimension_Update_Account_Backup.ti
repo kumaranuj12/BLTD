@@ -1,0 +1,42 @@
+#region Prolog
+vDim = 'Account';
+IF(DimensionExists(vDim) = 1);
+    DimensionDeleteAllElements(vDim);
+ELSE;
+    DimensionCreate(vDim);
+ENDIF;
+
+#DimensionDeleteAllElements( vDim );
+
+vAttr1 = 'Description';
+vAttr2 = 'Account_Type';
+vAttr3 = 'Caption';
+
+IF( DIMIX( '}ElementAttributes_Time', vAttr1 ) = 0 ); AttrInsert('Time', '', vAttr1, 'S'); ENDIF;
+IF( DIMIX( '}ElementAttributes_Time', vAttr2 ) = 0 ); AttrInsert('Time', '', vAttr2, 'S'); ENDIF;
+IF( DIMIX( '}ElementAttributes_Time', vAttr3 ) = 0 ); AttrInsert('Time', '', vAttr3, 'A'); ENDIF;
+#endregion
+#region Metadata
+#############################################################
+# METADATA - Builds consolidation hierarchy
+
+#############################################################
+
+vCurrentAcct = vSegment1;
+# 1. Create the Elements
+DimensionElementInsert(vDim, '', vCurrentAcct, 'N');
+
+DimensionSortOrder( vDim , ' byName' , 'Ascending' , 'byName', 'Ascending' );
+#endregion
+#region Data
+#############################################################
+# DATA - Fires for every row returned by the SQL query
+# Writes all attribute values to each leaf element
+#############################################################
+
+vCurrentAcct = vSegment1;
+# Assign values to the leaf level (Date)
+AttrPutS(vCost_Desc, vDim, vCurrentAcct, vAttr1);
+AttrPutS(vAcctType, vDim, vCurrentAcct, vAttr2);
+AttrPutS(vSegment1 | ' - ' | vCost_Desc, vDim, vCurrentAcct,vAttr3);
+#endregion
