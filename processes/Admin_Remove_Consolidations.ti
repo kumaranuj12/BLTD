@@ -1,0 +1,37 @@
+#region Prolog
+
+#=========================================================
+# >>> REMOVE CONSOLIDATIONS
+#=========================================================
+#  This Process cycles through a dimension and deltes the relationship between
+#   all Children and Parents it does NOT Remove any elements
+
+sDim = pDim;
+
+nDimSiz = DIMSIZ( sDim);
+
+Count = 1;
+
+WHILE( Count <= nDimSiz);
+
+# Get Element Name and Parent Num
+sElement = DIMNM( sDim, Count);
+
+  nParents = ELPARN( sDim, sElement);
+
+  WHILE ( nParents > 0 );
+
+  sParent = ELPAR( sDim, sElement, 1);
+  DimensionElementComponentDelete( sDim, sParent, sElement);
+
+  nParents = ELPARN( sDim, sElement);
+  END;
+
+
+Count = Count + 1;
+END;
+
+#===========================
+# REMOVE CONSOLIDATIONS <<<
+#===========================
+#endregion

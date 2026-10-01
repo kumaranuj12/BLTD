@@ -1,0 +1,12 @@
+{
+	"@type":"Dimension",
+	"Name":"VC_Dimensions_Measure",
+	"Hierarchies@Code.links":
+	[
+		"VC_Dimensions_Measure.hierarchies/VC_Dimensions_Measure.json"
+	],
+	"DefaultHierarchy":
+	{
+		"@id":"Dimensions('VC_Dimensions_Measure')/Hierarchies('VC_Dimensions_Measure')"
+	}
+}

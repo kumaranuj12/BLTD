@@ -1,0 +1,12 @@
+{
+	"@type":"Dimension",
+	"Name":"Division_Department",
+	"Hierarchies@Code.links":
+	[
+		"Division_Department.hierarchies/Division_Department.json"
+	],
+	"DefaultHierarchy":
+	{
+		"@id":"Dimensions('Division_Department')/Hierarchies('Division_Department')"
+	}
+}

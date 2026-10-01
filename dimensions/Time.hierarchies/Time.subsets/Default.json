@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"Default",
+	"Alias":"Description",
+	"Expression":"{DISTINCT(DESCENDANTS([Time].[Time].[FY-2026]))}"
+}

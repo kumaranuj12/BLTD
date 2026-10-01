@@ -1,0 +1,91 @@
+#region Prolog
+
+############## Apply dimesnion Security to
+cProcess = GetProcessName();
+cTimeStamp = TimSt( Now, '\Y\m\d\h\i\s' );
+sRandomInt = NumberToString( INT( RAND( ) * 1000 ));
+cDebugFile = GetProcessErrorFileDirectory | cProcess | '.' | cTimeStamp | '.' | sRandomInt ;
+
+#===================
+#  Initialise Debug
+ 
+ # Set debug file name   
+sDebugFile = cDebugFile | 'Prolog.debug';  
+# Log start time  
+AsciiOutput( sDebugFile, 'Process Started: ' | TimSt( Now, '\d-\m-\Y \h:\i:\s' ) ); 
+ # Log parameters
+  
+  
+sTargetDimName = pDimension;
+sControlDim = '}Dimensions';
+sControlDimIndex = 1 ;
+sControlDimSize = DIMSIZ ( sControlDim  );
+sDimGroups = '}Groups' ;
+
+
+sTargetDimName =pDimension;
+
+sAccessType='';
+
+nTargetDimSize = DIMSIZ ( sTargetDimName );
+nDimGroupsSize = DIMSIZ ( sDimGroups );
+IF(sTargetDimName @<>'' & DIMIX( sControlDim,sTargetDimName) <>0 & sTargetDimName @<>'All') ;
+		CubeName='}ElementSecurity_'|sTargetDimName;
+			IF(CubeExists(CubeName)=0);
+				CubeCreate(CubeName, sTargetDimName,sDimGroups);
+			ENDIF;
+    nTargetDimIndex = 1;
+	WHILE ( nTargetDimSize >= nTargetDimIndex );
+        		sTargetElement = DIMNM( sTargetDimName , nTargetDimIndex );   
+         		nDimGroupsIndex=1;
+		IF(DTYPE( sTargetDimName,sTargetElement) @='C');
+			sAccessType='Read';
+		ELSE;
+			sAccessType='Write';
+		ENDIF;
+		WHILE ( nDimGroupsSize >=  nDimGroupsIndex  );
+			sGroupName= DIMNM( sDimGroups , nDimGroupsIndex );   			  
+ 			ElementSecurityPut ( sAccessType ,  sTargetDimName , sTargetElement , sGroupName );                 
+			nDimGroupsIndex=nDimGroupsIndex+1;
+		END;
+     		nTargetDimIndex= nTargetDimIndex+1;
+	END;
+    ELSE;
+   
+
+        IF(sTargetDimName @<>'' &  sTargetDimName @='All') ;
+            	 WHILE ( sControlDimSize >= sControlDimIndex );
+                		sCrtElem = DIMNM( sControlDim ,  sControlDimIndex );
+                		sTargetDimName=sCrtElem;
+                 
+                		IF(SUBST(sTargetDimName,1 , 1 ) @<> '}' & SCAN(':',sTargetDimName)=0);
+			CubeName='}ElementSecurity_'|sTargetDimName;
+			IF(CubeExists(CubeName)=0);
+				CubeCreate(CubeName, sTargetDimName,sDimGroups);
+			ENDIF;
+                    			nTargetDimSize = DIMSIZ ( sTargetDimName );
+                    			nTargetDimIndex = 1;
+            			WHILE ( nTargetDimSize >= nTargetDimIndex );
+             				sTargetElement = DIMNM( sTargetDimName , nTargetDimIndex );   
+             				nDimGroupsIndex=1;
+            				IF(DTYPE( sTargetDimName,sTargetElement) @='C');
+            					sAccessType='Read';
+            				ELSE;
+            					sAccessType='Write';
+            				ENDIF;
+            				WHILE ( nDimGroupsSize >=  nDimGroupsIndex  );
+                					sGroupName= DIMNM( sDimGroups , nDimGroupsIndex );   
+                       				ElementSecurityPut ( sAccessType ,  sTargetDimName , sTargetElement , sGroupName );                 
+                					nDimGroupsIndex=nDimGroupsIndex+1;
+            				END;
+             				nTargetDimIndex= nTargetDimIndex+1;
+            			END;
+	ENDIF; 
+                sControlDimIndex=sControlDimIndex+1;
+            END;
+        ENDIF; 
+ENDIF;
+#endregion
+#region Epilog
+ 
+#endregion

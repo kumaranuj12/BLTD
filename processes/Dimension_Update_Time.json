@@ -1,0 +1,21 @@
+{
+	"@type":"Process",
+	"Name":"Dimension_Update_Time",
+	"HasSecurityAccess":false,
+	"Code@Code.link":"Dimension_Update_Time.ti",
+	"UIData":"CubeAction=1511\fDataAction=1503\fCubeLogChanges=0\f_ParameterConstraints=e30=\f",
+	"DataSource":
+	{
+		"Type":"None"
+	},
+	"Parameters":
+	[
+		{
+			"Name":"psYear",
+			"Prompt":"Enter_Year (YYYY)?",
+			"Value":"",
+			"Type":"String"
+		}
+	],
+	"Variables":[]
+}

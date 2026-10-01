@@ -1,0 +1,67 @@
+{
+	"@type":"MDXView",
+	"Name":"Default",
+	"MDX@Code.link":"Default.mdx",
+	"Meta" : 
+	{
+		"Aliases" : 
+		{
+			"[Account].[Account]" : "Caption",
+			"[Department].[Department]" : "MEMBER_NAME",
+			"[Division].[Division]" : "Caption",
+			"[Location].[Location]" : "Caption",
+			"[Time].[Time]" : "Description"
+		},
+		"ContextSets" : 
+		{
+			"[Account_Type].[Account_Type]" : 
+			{
+				"Expression" : "{[Account_Type].[Account_Type].MEMBERS}"
+			},
+			"[Company].[Company]" : 
+			{
+				"Expression" : "{[Company].[Company].MEMBERS}"
+			},
+			"[Currency].[Currency]" : 
+			{
+				"Expression" : "{[Currency].[Currency].MEMBERS}"
+			},
+			"[Department].[Department]" : 
+			{
+				"IsPublic" : true,
+				"SubsetName" : "Default"
+			},
+			"[Division].[Division]" : 
+			{
+				"IsPublic" : true,
+				"SubsetName" : "Default"
+			},
+			"[Location].[Location]" : 
+			{
+				"IsPublic" : true,
+				"SubsetName" : "Default"
+			},
+			"[Measure].[Measure]" : 
+			{
+				"Expression" : "{[Measure].[Measure].MEMBERS}"
+			},
+			"[Version].[Version]" : 
+			{
+				"Expression" : "{[Version].[Version].MEMBERS}"
+			}
+		},
+		"ExpandAboves" : 
+		{
+			"[Account].[Account]" : false,
+			"[Account_Type].[Account_Type]" : false,
+			"[Company].[Company]" : false,
+			"[Currency].[Currency]" : false,
+			"[Department].[Department]" : false,
+			"[Division].[Division]" : false,
+			"[Location].[Location]" : false,
+			"[Measure].[Measure]" : false,
+			"[Time].[Time]" : false,
+			"[Version].[Version]" : false
+		}
+	}
+}

@@ -1,0 +1,5 @@
+{
+	"@type":"Subset",
+	"Name":"N_Level",
+	"Expression":"{TM1FILTERBYLEVEL( {TM1SUBSETALL( [Fiscal_Year] )}, 0)}"
+}

@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"All Department",
+	"Alias":"Caption",
+	"Expression":"{DRILLDOWNMEMBER({[Division_Department].[Division_Department].[All_Department]} , {[Division_Department].[Division_Department].[All_Department]} , RECURSIVE)}"
+}

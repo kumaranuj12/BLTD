@@ -1,0 +1,29 @@
+{
+	"@type":"Process",
+	"Name":"Dimension_Update_Time_Attributes",
+	"HasSecurityAccess":false,
+	"Code@Code.link":"Dimension_Update_Time_Attributes.ti",
+	"UIData":"CubeAction=1511\fDataAction=1503\fCubeLogChanges=0\f_ParameterConstraints=e30=\f",
+	"VariablesUIData":
+	[
+		"VarType=32\fColType=827\f"
+	],
+	"DataSource":
+	{
+		"Type":"TM1DimensionSubset",
+		"dataSourceNameForClient":"Time",
+		"dataSourceNameForServer":"Time",
+		"subset":"Leaf_Level"
+	},
+	"Parameters":[],
+	"Variables":
+	[
+		{
+			"Name":"vTime",
+			"Type":"String",
+			"Position":1,
+			"StartByte":0,
+			"EndByte":0
+		}
+	]
+}

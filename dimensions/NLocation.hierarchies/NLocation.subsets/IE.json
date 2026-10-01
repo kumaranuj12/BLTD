@@ -1,0 +1,13 @@
+{
+	"@type":"Subset",
+	"Name":"IE",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Houston')"
+		},
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Corpus Christi')"
+		}
+	]
+}

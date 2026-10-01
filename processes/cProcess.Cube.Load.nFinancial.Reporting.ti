@@ -1,0 +1,126 @@
+#region Prolog
+################# Anuj Kumar -- 12-06-26 (dd-mm-yy)Excute the process to updte the  account dimension before loading the data for Report.
+
+ExecuteProcess( 'Dimension_Update_Account');
+
+#########################
+
+
+cProcess = GetProcessName();
+cTimeStamp = TimSt( Now, '\Y\m\d\h\i\s' );
+sRandomInt = NumberToString( INT( RAND( ) * 1000 ));
+sDebugFile = GetProcessErrorFileDirectory | cProcess | '.' | cTimeStamp | '.' | sRandomInt ;
+
+##########################################
+sODBCname = CellGetS( 'Sys DB Configuration', 'Development', 'Import', 'ODBC Name' );
+sUser = CellGetS('Sys DB Configuration', 'Development', 'Import', 'User' );
+sPassword = CellGetS( 'Sys DB Configuration', 'Development', 'Import', 'Password' );
+#########################################################################
+
+sPyear=pYear;
+Cubename='nFinancial_Reporting';
+CubeSetLogChanges(CubeName, 0);
+sViewName = Cubename|'.'|cProcess|'.'|cTimeStamp|'.'|sRandomInt;
+sSubName=sViewName;
+sViewType=0;
+Flag=1;
+sVersion='Actual';
+sCurr='Local Currency';
+sCompany='4';
+sMeasure='Amount';
+sTime=sPyear;
+########### View Created and Destroy
+
+IF(ViewExists(cubeName, sViewName)=1);
+	ViewDestroy (cubeName, sViewName);
+ENDIF;
+iDim=1;
+WHILE(TABDIM(cubeName, iDim)@<> '');
+	sDim = TABDIM(cubeName, iDim);
+	IF(SubsetExists(sDim, sSubName)=1);
+		SubsetDestroy(sDim, sSubName);
+	ENDIF;
+iDim=iDim+1;
+END;
+
+IF(ViewExists(CubeName, sViewName)=0);
+	ViewCreate(cubeName, sViewName,sViewType);
+ENDIF;
+iDim=1;
+
+############# Dynamic Subset Created and Subset Assign
+iDim=1;
+sMDX='';
+WHILE(TABDIM(Cubename, iDim)@<> '');
+        sDim = TABDIM(cubeName, iDim);
+	IF(sDim@='Currency');
+		sMDX ='{['|sDim|'].['| sCurr |']}';	
+		SubsetCreatebyMDX( sSubName, sMDX);
+	ELSEIF(sDim@='Version');
+		sMDX ='{['|sDim|'].['|sVersion|']}';	
+		SubsetCreatebyMDX( sSubName, sMDX);
+	ELSEIF(sDim@='Company');
+		sMDX ='{['|sDim|'].['|sCompany|']}';	
+		SubsetCreatebyMDX( sSubName, sMDX);    
+	ELSEIF(sDim@='Measure');
+		sMDX ='{['|sDim|'].['|sMeasure|']}';	
+		SubsetCreatebyMDX( sSubName, sMDX);    
+	    ELSEIF(sDim@='Time');   
+           	 
+           # sMDX ='{TM1FILTERBYLEVEL(DISTINCT(DESCENDANTS([Time].[Time].['|sTime|'])) , 0)}';      
+				sMDX='{TM1FILTERBYPATTERN(TM1FILTERBYLEVEL(DISTINCT(TM1DRILLDOWNMEMBER(DRILLUPMEMBER(DRILLDOWNMEMBER({[Time].[Time].[All_Years]} , 
+                {[Time].[Time].[All_Years]} , RECURSIVE) , {[Time].[Time].[All_Years]}) , {[Time].[Time].[All_Years]} , RECURSIVE)) , 0) , "*'|sTime|'" )}';
+            SubsetCreatebyMDX( sSubName, sMDX); 	
+	ELSE;
+    		sMDX = '{TM1FILTERBYLEVEL( {TM1SUBSETALL( [' |sDim| '] )}, 0)}';	
+			SubsetCreatebyMDX( sSubName, sMDX);
+   
+	ENDIF ;
+	ViewSubsetAssign(CubeName, sViewName, sDim, sSubName);
+	iDim = iDim + 1;
+    END;
+ViewExtractSkipCalcsSet(cubeName, sViewName, Flag);
+ViewExtractSkipZeroesSet(cubeName, sViewName, Flag);
+ViewSuppressZeroesSet(cubeName, sViewName, Flag);
+VIEWZEROOUT(CubeName, sViewName);
+################## DataSource
+DataSourceType= 'ODBC' ; 
+DataSourceNameForServer = sODBCname ;
+DatasourceUserName = sUser  ; 
+DatasourcePassword = sPassword ;
+#endregion
+#region Data
+IF (vActualYear @<>'2019');
+	CellPutn( vJan, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '01-'|sPyear,vGLNumber,sMeasure );
+	CellPutn( vFeb, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '02-'|sPyear,vGLNumber,sMeasure );
+	CellPutn( vMar, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '03-'|sPyear,vGLNumber,sMeasure );
+	CellPutn( vApr, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '04-'|sPyear,vGLNumber,sMeasure );
+	CellPutn( vMay, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '05-'|sPyear,vGLNumber,sMeasure );
+	CellPutn( vJun, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '06-'|sPyear,vGLNumber,sMeasure );
+	CellPutn( vJul, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '07-'|sPyear,vGLNumber,sMeasure );
+	CellPutn( vAug, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '08-'|sPyear,vGLNumber,sMeasure );
+	CellPutn( vSep, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '09-'|sPyear,vGLNumber,sMeasure );
+	CellPutn( vOct, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '10-'|sPyear,vGLNumber,sMeasure );
+	CellPutn( vNov, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '11-'|sPyear,vGLNumber,sMeasure );
+	CellPutn( vDec, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '12-'|sPyear,vGLNumber,sMeasure );
+    ELSE;
+    
+	CellPutn( vNov, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '11-'|sPyear,vGLNumber,sMeasure );
+	CellPutn( vDec, Cubename,sVersion, sCurr,vCompany, vDivDep, vLoc, '12-'|sPyear,vGLNumber,sMeasure );
+    
+ENDIF;
+#endregion
+#region Epilog
+
+CubeSetLogChanges(CubeName, 1);
+
+iDim=1;
+ViewDestroy ( cubeName, sViewName );
+WHILE(TABDIM(cubeName, iDim)@<> '');
+	sDim = TABDIM(cubeName, iDim);
+		IF(SubsetExists(sDim, sSubName)=1);
+		SubsetDestroy(sDim, sSubName);
+	ENDIF;
+iDim=iDim+1;
+END;
+#endregion

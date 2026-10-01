@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"FY2020",
+	"Alias":"Caption",
+	"Expression":"{DISTINCT({DESCENDANTS([Time].[Time].[FY-2020])})}"
+}

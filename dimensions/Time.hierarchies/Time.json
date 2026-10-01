@@ -1,0 +1,3806 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Time",
+	"ElementsSortType":"ByHierarchy",
+	"Elements":
+	[
+		{
+			"Name":"All_Years",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"FY-2020",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"Q1-2020",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2019",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"12-2019",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"01-2020",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q2-2020",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2020",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"03-2020",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"04-2020",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q3-2020",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2020",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"06-2020",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"07-2020",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q4-2020",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2020",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"09-2020",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"10-2020",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2021",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"Q1-2021",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2020",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"12-2020",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"01-2021",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q2-2021",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2021",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"03-2021",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"04-2021",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q3-2021",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2021",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"06-2021",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"07-2021",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q4-2021",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2021",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"09-2021",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"10-2021",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2022",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"Q1-2022",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2021",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"12-2021",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"01-2022",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q2-2022",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2022",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"03-2022",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"04-2022",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q3-2022",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2022",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"06-2022",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"07-2022",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q4-2022",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2022",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"09-2022",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"10-2022",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2023",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"Q1-2023",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2022",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"12-2022",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"01-2023",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q2-2023",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2023",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"03-2023",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"04-2023",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q3-2023",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2023",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"06-2023",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"07-2023",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q4-2023",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2023",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"09-2023",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"10-2023",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2024",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"Q1-2024",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2023",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"12-2023",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"01-2024",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q2-2024",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2024",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"03-2024",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"04-2024",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q3-2024",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2024",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"06-2024",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"07-2024",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q4-2024",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2024",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"09-2024",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"10-2024",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2025",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"Q1-2025",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2024",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"12-2024",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"01-2025",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q2-2025",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2025",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"03-2025",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"04-2025",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q3-2025",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2025",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"06-2025",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"07-2025",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q4-2025",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2025",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"09-2025",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"10-2025",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"11-2025",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"12-2025",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2026",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"Q1-2026",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2026",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"02-2026",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"03-2026",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q2-2026",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2026",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"05-2026",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"06-2026",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q3-2026",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2026",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"08-2026",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"09-2026",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q4-2026",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2026",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"11-2026",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"12-2026",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2027",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"Q1-2027",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2027",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"02-2027",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"03-2027",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q2-2027",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2027",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"05-2027",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"06-2027",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q3-2027",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2027",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"08-2027",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"09-2027",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q4-2027",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2027",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"11-2027",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"12-2027",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2028",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"Q1-2028",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2028",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"02-2028",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"03-2028",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q2-2028",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2028",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"05-2028",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"06-2028",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q3-2028",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2028",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"08-2028",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"09-2028",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q4-2028",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2028",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"11-2028",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"12-2028",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2029",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"Q1-2029",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2029",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"02-2029",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"03-2029",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q2-2029",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2029",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"05-2029",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"06-2029",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q3-2029",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2029",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"08-2029",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"09-2029",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q4-2029",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2029",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"11-2029",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"12-2029",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2030",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"Q1-2030",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2030",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"02-2030",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"03-2030",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q2-2030",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2030",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"05-2030",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"06-2030",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q3-2030",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2030",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"08-2030",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"09-2030",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Q4-2030",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2030",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"11-2030",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"12-2030",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"All_YTDs",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"2026 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"12-2026 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2026 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2026 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"09-2026 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2026 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2026 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"06-2026 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2026 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2026 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"03-2026 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2026 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2026 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"2027 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"12-2027 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2027 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2027 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"09-2027 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2027 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2027 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"06-2027 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2027 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2027 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"03-2027 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2027 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2027 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"2028 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"12-2028 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2028 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2028 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"09-2028 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2028 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2028 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"06-2028 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2028 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2028 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"03-2028 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2028 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2028 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"2029 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"12-2029 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2029 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2029 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"09-2029 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2029 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2029 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"06-2029 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2029 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2029 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"03-2029 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2029 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2029 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"2030 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"12-2030 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2030 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2030 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"09-2030 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2030 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2030 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"06-2030 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2030 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2030 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"03-2030 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2030 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2030 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"2022 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2022 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"09-2022 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2022 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2022 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"06-2022 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2022 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2022 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"03-2022 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2022 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2022 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"12-2021 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2021 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"2023 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2023 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"09-2023 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2023 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2023 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"06-2023 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2023 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2023 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"03-2023 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2023 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2023 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"12-2022 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2022 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"2024 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2024 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"09-2024 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2024 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2024 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"06-2024 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2024 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2024 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"03-2024 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2024 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2024 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"12-2023 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2023 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"2025 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"12-2025 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2025 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2025 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"09-2025 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2025 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2025 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"06-2025 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2025 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2025 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"03-2025 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2025 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2025 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"12-2024 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2024 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"2020 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2020 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"09-2020 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2020 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2020 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"06-2020 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2020 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2020 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"03-2020 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2020 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2020 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"12-2019 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2019 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"2021 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"10-2021 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"09-2021 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"08-2021 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"07-2021 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"06-2021 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"05-2021 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"04-2021 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"03-2021 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"02-2021 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"01-2021 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"12-2020 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"11-2020 YTD",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"FY_Input",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"FY-2026 Input",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2027 Input",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2028 Input",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2029 Input",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2030 Input",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2022 Input",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2023 Input",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2024 Input",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2025 Input",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2020 Input",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"FY-2021 Input",
+			"Type":"Numeric"
+		}
+	],
+	"Edges":
+	[
+		{
+			"ParentName":"All_Years",
+			"ComponentName":"FY-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Years",
+			"ComponentName":"FY-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Years",
+			"ComponentName":"FY-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Years",
+			"ComponentName":"FY-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Years",
+			"ComponentName":"FY-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Years",
+			"ComponentName":"FY-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Years",
+			"ComponentName":"FY-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Years",
+			"ComponentName":"FY-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Years",
+			"ComponentName":"FY-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Years",
+			"ComponentName":"FY-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Years",
+			"ComponentName":"FY-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2020",
+			"ComponentName":"Q1-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2020",
+			"ComponentName":"Q2-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2020",
+			"ComponentName":"Q3-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2020",
+			"ComponentName":"Q4-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2020",
+			"ComponentName":"11-2019",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2020",
+			"ComponentName":"12-2019",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2020",
+			"ComponentName":"01-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2020",
+			"ComponentName":"02-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2020",
+			"ComponentName":"03-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2020",
+			"ComponentName":"04-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2020",
+			"ComponentName":"05-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2020",
+			"ComponentName":"06-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2020",
+			"ComponentName":"07-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2020",
+			"ComponentName":"08-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2020",
+			"ComponentName":"09-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2020",
+			"ComponentName":"10-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2021",
+			"ComponentName":"Q1-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2021",
+			"ComponentName":"Q2-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2021",
+			"ComponentName":"Q3-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2021",
+			"ComponentName":"Q4-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2021",
+			"ComponentName":"11-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2021",
+			"ComponentName":"12-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2021",
+			"ComponentName":"01-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2021",
+			"ComponentName":"02-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2021",
+			"ComponentName":"03-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2021",
+			"ComponentName":"04-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2021",
+			"ComponentName":"05-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2021",
+			"ComponentName":"06-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2021",
+			"ComponentName":"07-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2021",
+			"ComponentName":"08-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2021",
+			"ComponentName":"09-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2021",
+			"ComponentName":"10-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2022",
+			"ComponentName":"Q1-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2022",
+			"ComponentName":"Q2-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2022",
+			"ComponentName":"Q3-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2022",
+			"ComponentName":"Q4-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2022",
+			"ComponentName":"11-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2022",
+			"ComponentName":"12-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2022",
+			"ComponentName":"01-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2022",
+			"ComponentName":"02-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2022",
+			"ComponentName":"03-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2022",
+			"ComponentName":"04-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2022",
+			"ComponentName":"05-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2022",
+			"ComponentName":"06-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2022",
+			"ComponentName":"07-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2022",
+			"ComponentName":"08-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2022",
+			"ComponentName":"09-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2022",
+			"ComponentName":"10-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2023",
+			"ComponentName":"Q1-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2023",
+			"ComponentName":"Q2-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2023",
+			"ComponentName":"Q3-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2023",
+			"ComponentName":"Q4-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2023",
+			"ComponentName":"11-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2023",
+			"ComponentName":"12-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2023",
+			"ComponentName":"01-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2023",
+			"ComponentName":"02-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2023",
+			"ComponentName":"03-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2023",
+			"ComponentName":"04-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2023",
+			"ComponentName":"05-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2023",
+			"ComponentName":"06-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2023",
+			"ComponentName":"07-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2023",
+			"ComponentName":"08-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2023",
+			"ComponentName":"09-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2023",
+			"ComponentName":"10-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2024",
+			"ComponentName":"Q1-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2024",
+			"ComponentName":"Q2-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2024",
+			"ComponentName":"Q3-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2024",
+			"ComponentName":"Q4-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2024",
+			"ComponentName":"11-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2024",
+			"ComponentName":"12-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2024",
+			"ComponentName":"01-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2024",
+			"ComponentName":"02-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2024",
+			"ComponentName":"03-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2024",
+			"ComponentName":"04-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2024",
+			"ComponentName":"05-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2024",
+			"ComponentName":"06-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2024",
+			"ComponentName":"07-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2024",
+			"ComponentName":"08-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2024",
+			"ComponentName":"09-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2024",
+			"ComponentName":"10-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2025",
+			"ComponentName":"Q1-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2025",
+			"ComponentName":"Q2-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2025",
+			"ComponentName":"Q3-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2025",
+			"ComponentName":"Q4-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2025",
+			"ComponentName":"11-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2025",
+			"ComponentName":"12-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2025",
+			"ComponentName":"01-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2025",
+			"ComponentName":"02-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2025",
+			"ComponentName":"03-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2025",
+			"ComponentName":"04-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2025",
+			"ComponentName":"05-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2025",
+			"ComponentName":"06-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2025",
+			"ComponentName":"07-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2025",
+			"ComponentName":"08-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2025",
+			"ComponentName":"09-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2025",
+			"ComponentName":"10-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2025",
+			"ComponentName":"11-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2025",
+			"ComponentName":"12-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2026",
+			"ComponentName":"Q1-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2026",
+			"ComponentName":"Q2-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2026",
+			"ComponentName":"Q3-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2026",
+			"ComponentName":"Q4-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2026",
+			"ComponentName":"01-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2026",
+			"ComponentName":"02-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2026",
+			"ComponentName":"03-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2026",
+			"ComponentName":"04-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2026",
+			"ComponentName":"05-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2026",
+			"ComponentName":"06-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2026",
+			"ComponentName":"07-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2026",
+			"ComponentName":"08-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2026",
+			"ComponentName":"09-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2026",
+			"ComponentName":"10-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2026",
+			"ComponentName":"11-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2026",
+			"ComponentName":"12-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2027",
+			"ComponentName":"Q1-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2027",
+			"ComponentName":"Q2-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2027",
+			"ComponentName":"Q3-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2027",
+			"ComponentName":"Q4-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2027",
+			"ComponentName":"01-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2027",
+			"ComponentName":"02-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2027",
+			"ComponentName":"03-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2027",
+			"ComponentName":"04-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2027",
+			"ComponentName":"05-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2027",
+			"ComponentName":"06-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2027",
+			"ComponentName":"07-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2027",
+			"ComponentName":"08-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2027",
+			"ComponentName":"09-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2027",
+			"ComponentName":"10-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2027",
+			"ComponentName":"11-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2027",
+			"ComponentName":"12-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2028",
+			"ComponentName":"Q1-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2028",
+			"ComponentName":"Q2-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2028",
+			"ComponentName":"Q3-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2028",
+			"ComponentName":"Q4-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2028",
+			"ComponentName":"01-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2028",
+			"ComponentName":"02-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2028",
+			"ComponentName":"03-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2028",
+			"ComponentName":"04-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2028",
+			"ComponentName":"05-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2028",
+			"ComponentName":"06-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2028",
+			"ComponentName":"07-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2028",
+			"ComponentName":"08-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2028",
+			"ComponentName":"09-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2028",
+			"ComponentName":"10-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2028",
+			"ComponentName":"11-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2028",
+			"ComponentName":"12-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2029",
+			"ComponentName":"Q1-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2029",
+			"ComponentName":"Q2-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2029",
+			"ComponentName":"Q3-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2029",
+			"ComponentName":"Q4-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2029",
+			"ComponentName":"01-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2029",
+			"ComponentName":"02-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2029",
+			"ComponentName":"03-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2029",
+			"ComponentName":"04-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2029",
+			"ComponentName":"05-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2029",
+			"ComponentName":"06-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2029",
+			"ComponentName":"07-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2029",
+			"ComponentName":"08-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2029",
+			"ComponentName":"09-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2029",
+			"ComponentName":"10-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2029",
+			"ComponentName":"11-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2029",
+			"ComponentName":"12-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2030",
+			"ComponentName":"Q1-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2030",
+			"ComponentName":"Q2-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2030",
+			"ComponentName":"Q3-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY-2030",
+			"ComponentName":"Q4-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2030",
+			"ComponentName":"01-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2030",
+			"ComponentName":"02-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q1-2030",
+			"ComponentName":"03-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2030",
+			"ComponentName":"04-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2030",
+			"ComponentName":"05-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q2-2030",
+			"ComponentName":"06-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2030",
+			"ComponentName":"07-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2030",
+			"ComponentName":"08-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q3-2030",
+			"ComponentName":"09-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2030",
+			"ComponentName":"10-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2030",
+			"ComponentName":"11-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"Q4-2030",
+			"ComponentName":"12-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_YTDs",
+			"ComponentName":"2026 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_YTDs",
+			"ComponentName":"2027 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_YTDs",
+			"ComponentName":"2028 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_YTDs",
+			"ComponentName":"2029 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_YTDs",
+			"ComponentName":"2030 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_YTDs",
+			"ComponentName":"2022 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_YTDs",
+			"ComponentName":"2023 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_YTDs",
+			"ComponentName":"2024 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_YTDs",
+			"ComponentName":"2025 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_YTDs",
+			"ComponentName":"2020 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_YTDs",
+			"ComponentName":"2021 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"2026 YTD",
+			"ComponentName":"12-2026 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2026 YTD",
+			"ComponentName":"11-2026 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2026 YTD",
+			"ComponentName":"12-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2026 YTD",
+			"ComponentName":"10-2026 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2026 YTD",
+			"ComponentName":"11-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2026 YTD",
+			"ComponentName":"09-2026 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2026 YTD",
+			"ComponentName":"10-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2026 YTD",
+			"ComponentName":"08-2026 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2026 YTD",
+			"ComponentName":"09-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2026 YTD",
+			"ComponentName":"07-2026 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2026 YTD",
+			"ComponentName":"08-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2026 YTD",
+			"ComponentName":"06-2026 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2026 YTD",
+			"ComponentName":"07-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2026 YTD",
+			"ComponentName":"05-2026 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2026 YTD",
+			"ComponentName":"06-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2026 YTD",
+			"ComponentName":"04-2026 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2026 YTD",
+			"ComponentName":"05-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2026 YTD",
+			"ComponentName":"03-2026 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2026 YTD",
+			"ComponentName":"04-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2026 YTD",
+			"ComponentName":"02-2026 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2026 YTD",
+			"ComponentName":"03-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2026 YTD",
+			"ComponentName":"01-2026 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2026 YTD",
+			"ComponentName":"02-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2026 YTD",
+			"ComponentName":"01-2026",
+			"Weight":1
+		},
+		{
+			"ParentName":"2027 YTD",
+			"ComponentName":"12-2027 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2027 YTD",
+			"ComponentName":"11-2027 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2027 YTD",
+			"ComponentName":"12-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2027 YTD",
+			"ComponentName":"10-2027 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2027 YTD",
+			"ComponentName":"11-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2027 YTD",
+			"ComponentName":"09-2027 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2027 YTD",
+			"ComponentName":"10-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2027 YTD",
+			"ComponentName":"08-2027 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2027 YTD",
+			"ComponentName":"09-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2027 YTD",
+			"ComponentName":"07-2027 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2027 YTD",
+			"ComponentName":"08-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2027 YTD",
+			"ComponentName":"06-2027 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2027 YTD",
+			"ComponentName":"07-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2027 YTD",
+			"ComponentName":"05-2027 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2027 YTD",
+			"ComponentName":"06-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2027 YTD",
+			"ComponentName":"04-2027 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2027 YTD",
+			"ComponentName":"05-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2027 YTD",
+			"ComponentName":"03-2027 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2027 YTD",
+			"ComponentName":"04-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2027 YTD",
+			"ComponentName":"02-2027 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2027 YTD",
+			"ComponentName":"03-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2027 YTD",
+			"ComponentName":"01-2027 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2027 YTD",
+			"ComponentName":"02-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2027 YTD",
+			"ComponentName":"01-2027",
+			"Weight":1
+		},
+		{
+			"ParentName":"2028 YTD",
+			"ComponentName":"12-2028 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2028 YTD",
+			"ComponentName":"11-2028 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2028 YTD",
+			"ComponentName":"12-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2028 YTD",
+			"ComponentName":"10-2028 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2028 YTD",
+			"ComponentName":"11-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2028 YTD",
+			"ComponentName":"09-2028 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2028 YTD",
+			"ComponentName":"10-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2028 YTD",
+			"ComponentName":"08-2028 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2028 YTD",
+			"ComponentName":"09-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2028 YTD",
+			"ComponentName":"07-2028 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2028 YTD",
+			"ComponentName":"08-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2028 YTD",
+			"ComponentName":"06-2028 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2028 YTD",
+			"ComponentName":"07-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2028 YTD",
+			"ComponentName":"05-2028 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2028 YTD",
+			"ComponentName":"06-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2028 YTD",
+			"ComponentName":"04-2028 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2028 YTD",
+			"ComponentName":"05-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2028 YTD",
+			"ComponentName":"03-2028 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2028 YTD",
+			"ComponentName":"04-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2028 YTD",
+			"ComponentName":"02-2028 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2028 YTD",
+			"ComponentName":"03-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2028 YTD",
+			"ComponentName":"01-2028 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2028 YTD",
+			"ComponentName":"02-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2028 YTD",
+			"ComponentName":"01-2028",
+			"Weight":1
+		},
+		{
+			"ParentName":"2029 YTD",
+			"ComponentName":"12-2029 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2029 YTD",
+			"ComponentName":"11-2029 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2029 YTD",
+			"ComponentName":"12-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2029 YTD",
+			"ComponentName":"10-2029 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2029 YTD",
+			"ComponentName":"11-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2029 YTD",
+			"ComponentName":"09-2029 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2029 YTD",
+			"ComponentName":"10-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2029 YTD",
+			"ComponentName":"08-2029 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2029 YTD",
+			"ComponentName":"09-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2029 YTD",
+			"ComponentName":"07-2029 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2029 YTD",
+			"ComponentName":"08-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2029 YTD",
+			"ComponentName":"06-2029 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2029 YTD",
+			"ComponentName":"07-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2029 YTD",
+			"ComponentName":"05-2029 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2029 YTD",
+			"ComponentName":"06-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2029 YTD",
+			"ComponentName":"04-2029 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2029 YTD",
+			"ComponentName":"05-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2029 YTD",
+			"ComponentName":"03-2029 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2029 YTD",
+			"ComponentName":"04-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2029 YTD",
+			"ComponentName":"02-2029 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2029 YTD",
+			"ComponentName":"03-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2029 YTD",
+			"ComponentName":"01-2029 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2029 YTD",
+			"ComponentName":"02-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2029 YTD",
+			"ComponentName":"01-2029",
+			"Weight":1
+		},
+		{
+			"ParentName":"2030 YTD",
+			"ComponentName":"12-2030 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2030 YTD",
+			"ComponentName":"11-2030 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2030 YTD",
+			"ComponentName":"12-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2030 YTD",
+			"ComponentName":"10-2030 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2030 YTD",
+			"ComponentName":"11-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2030 YTD",
+			"ComponentName":"09-2030 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2030 YTD",
+			"ComponentName":"10-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2030 YTD",
+			"ComponentName":"08-2030 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2030 YTD",
+			"ComponentName":"09-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2030 YTD",
+			"ComponentName":"07-2030 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2030 YTD",
+			"ComponentName":"08-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2030 YTD",
+			"ComponentName":"06-2030 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2030 YTD",
+			"ComponentName":"07-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2030 YTD",
+			"ComponentName":"05-2030 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2030 YTD",
+			"ComponentName":"06-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2030 YTD",
+			"ComponentName":"04-2030 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2030 YTD",
+			"ComponentName":"05-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2030 YTD",
+			"ComponentName":"03-2030 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2030 YTD",
+			"ComponentName":"04-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2030 YTD",
+			"ComponentName":"02-2030 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2030 YTD",
+			"ComponentName":"03-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2030 YTD",
+			"ComponentName":"01-2030 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2030 YTD",
+			"ComponentName":"02-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2030 YTD",
+			"ComponentName":"01-2030",
+			"Weight":1
+		},
+		{
+			"ParentName":"2022 YTD",
+			"ComponentName":"10-2022 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2022 YTD",
+			"ComponentName":"09-2022 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2022 YTD",
+			"ComponentName":"10-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2022 YTD",
+			"ComponentName":"08-2022 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2022 YTD",
+			"ComponentName":"09-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2022 YTD",
+			"ComponentName":"07-2022 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2022 YTD",
+			"ComponentName":"08-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2022 YTD",
+			"ComponentName":"06-2022 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2022 YTD",
+			"ComponentName":"07-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2022 YTD",
+			"ComponentName":"05-2022 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2022 YTD",
+			"ComponentName":"06-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2022 YTD",
+			"ComponentName":"04-2022 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2022 YTD",
+			"ComponentName":"05-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2022 YTD",
+			"ComponentName":"03-2022 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2022 YTD",
+			"ComponentName":"04-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2022 YTD",
+			"ComponentName":"02-2022 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2022 YTD",
+			"ComponentName":"03-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2022 YTD",
+			"ComponentName":"01-2022 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2022 YTD",
+			"ComponentName":"02-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2022 YTD",
+			"ComponentName":"12-2021 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2022 YTD",
+			"ComponentName":"01-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2021 YTD",
+			"ComponentName":"11-2021 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2021 YTD",
+			"ComponentName":"12-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2021 YTD",
+			"ComponentName":"11-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"2023 YTD",
+			"ComponentName":"10-2023 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2023 YTD",
+			"ComponentName":"09-2023 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2023 YTD",
+			"ComponentName":"10-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2023 YTD",
+			"ComponentName":"08-2023 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2023 YTD",
+			"ComponentName":"09-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2023 YTD",
+			"ComponentName":"07-2023 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2023 YTD",
+			"ComponentName":"08-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2023 YTD",
+			"ComponentName":"06-2023 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2023 YTD",
+			"ComponentName":"07-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2023 YTD",
+			"ComponentName":"05-2023 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2023 YTD",
+			"ComponentName":"06-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2023 YTD",
+			"ComponentName":"04-2023 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2023 YTD",
+			"ComponentName":"05-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2023 YTD",
+			"ComponentName":"03-2023 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2023 YTD",
+			"ComponentName":"04-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2023 YTD",
+			"ComponentName":"02-2023 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2023 YTD",
+			"ComponentName":"03-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2023 YTD",
+			"ComponentName":"01-2023 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2023 YTD",
+			"ComponentName":"02-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2023 YTD",
+			"ComponentName":"12-2022 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2023 YTD",
+			"ComponentName":"01-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2022 YTD",
+			"ComponentName":"11-2022 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2022 YTD",
+			"ComponentName":"12-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2022 YTD",
+			"ComponentName":"11-2022",
+			"Weight":1
+		},
+		{
+			"ParentName":"2024 YTD",
+			"ComponentName":"10-2024 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2024 YTD",
+			"ComponentName":"09-2024 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2024 YTD",
+			"ComponentName":"10-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2024 YTD",
+			"ComponentName":"08-2024 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2024 YTD",
+			"ComponentName":"09-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2024 YTD",
+			"ComponentName":"07-2024 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2024 YTD",
+			"ComponentName":"08-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2024 YTD",
+			"ComponentName":"06-2024 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2024 YTD",
+			"ComponentName":"07-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2024 YTD",
+			"ComponentName":"05-2024 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2024 YTD",
+			"ComponentName":"06-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2024 YTD",
+			"ComponentName":"04-2024 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2024 YTD",
+			"ComponentName":"05-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2024 YTD",
+			"ComponentName":"03-2024 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2024 YTD",
+			"ComponentName":"04-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2024 YTD",
+			"ComponentName":"02-2024 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2024 YTD",
+			"ComponentName":"03-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2024 YTD",
+			"ComponentName":"01-2024 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2024 YTD",
+			"ComponentName":"02-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2024 YTD",
+			"ComponentName":"12-2023 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2024 YTD",
+			"ComponentName":"01-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2023 YTD",
+			"ComponentName":"11-2023 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2023 YTD",
+			"ComponentName":"12-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2023 YTD",
+			"ComponentName":"11-2023",
+			"Weight":1
+		},
+		{
+			"ParentName":"2025 YTD",
+			"ComponentName":"12-2025 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2025 YTD",
+			"ComponentName":"11-2025 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2025 YTD",
+			"ComponentName":"12-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2025 YTD",
+			"ComponentName":"10-2025 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2025 YTD",
+			"ComponentName":"11-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2025 YTD",
+			"ComponentName":"09-2025 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2025 YTD",
+			"ComponentName":"10-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2025 YTD",
+			"ComponentName":"08-2025 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2025 YTD",
+			"ComponentName":"09-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2025 YTD",
+			"ComponentName":"07-2025 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2025 YTD",
+			"ComponentName":"08-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2025 YTD",
+			"ComponentName":"06-2025 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2025 YTD",
+			"ComponentName":"07-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2025 YTD",
+			"ComponentName":"05-2025 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2025 YTD",
+			"ComponentName":"06-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2025 YTD",
+			"ComponentName":"04-2025 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2025 YTD",
+			"ComponentName":"05-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2025 YTD",
+			"ComponentName":"03-2025 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2025 YTD",
+			"ComponentName":"04-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2025 YTD",
+			"ComponentName":"02-2025 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2025 YTD",
+			"ComponentName":"03-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2025 YTD",
+			"ComponentName":"01-2025 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2025 YTD",
+			"ComponentName":"02-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2025 YTD",
+			"ComponentName":"12-2024 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2025 YTD",
+			"ComponentName":"01-2025",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2024 YTD",
+			"ComponentName":"11-2024 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2024 YTD",
+			"ComponentName":"12-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2024 YTD",
+			"ComponentName":"11-2024",
+			"Weight":1
+		},
+		{
+			"ParentName":"2020 YTD",
+			"ComponentName":"10-2020 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2020 YTD",
+			"ComponentName":"09-2020 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2020 YTD",
+			"ComponentName":"10-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2020 YTD",
+			"ComponentName":"08-2020 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2020 YTD",
+			"ComponentName":"09-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2020 YTD",
+			"ComponentName":"07-2020 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2020 YTD",
+			"ComponentName":"08-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2020 YTD",
+			"ComponentName":"06-2020 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2020 YTD",
+			"ComponentName":"07-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2020 YTD",
+			"ComponentName":"05-2020 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2020 YTD",
+			"ComponentName":"06-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2020 YTD",
+			"ComponentName":"04-2020 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2020 YTD",
+			"ComponentName":"05-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2020 YTD",
+			"ComponentName":"03-2020 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2020 YTD",
+			"ComponentName":"04-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2020 YTD",
+			"ComponentName":"02-2020 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2020 YTD",
+			"ComponentName":"03-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2020 YTD",
+			"ComponentName":"01-2020 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2020 YTD",
+			"ComponentName":"02-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2020 YTD",
+			"ComponentName":"12-2019 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2020 YTD",
+			"ComponentName":"01-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2019 YTD",
+			"ComponentName":"11-2019 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2019 YTD",
+			"ComponentName":"12-2019",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2019 YTD",
+			"ComponentName":"11-2019",
+			"Weight":1
+		},
+		{
+			"ParentName":"2021 YTD",
+			"ComponentName":"10-2021 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2021 YTD",
+			"ComponentName":"09-2021 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"10-2021 YTD",
+			"ComponentName":"10-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2021 YTD",
+			"ComponentName":"08-2021 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"09-2021 YTD",
+			"ComponentName":"09-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2021 YTD",
+			"ComponentName":"07-2021 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"08-2021 YTD",
+			"ComponentName":"08-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2021 YTD",
+			"ComponentName":"06-2021 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"07-2021 YTD",
+			"ComponentName":"07-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2021 YTD",
+			"ComponentName":"05-2021 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"06-2021 YTD",
+			"ComponentName":"06-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2021 YTD",
+			"ComponentName":"04-2021 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"05-2021 YTD",
+			"ComponentName":"05-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2021 YTD",
+			"ComponentName":"03-2021 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"04-2021 YTD",
+			"ComponentName":"04-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2021 YTD",
+			"ComponentName":"02-2021 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"03-2021 YTD",
+			"ComponentName":"03-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2021 YTD",
+			"ComponentName":"01-2021 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"02-2021 YTD",
+			"ComponentName":"02-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2021 YTD",
+			"ComponentName":"12-2020 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"01-2021 YTD",
+			"ComponentName":"01-2021",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2020 YTD",
+			"ComponentName":"11-2020 YTD",
+			"Weight":1
+		},
+		{
+			"ParentName":"12-2020 YTD",
+			"ComponentName":"12-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"11-2020 YTD",
+			"ComponentName":"11-2020",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY_Input",
+			"ComponentName":"FY-2026 Input",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY_Input",
+			"ComponentName":"FY-2027 Input",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY_Input",
+			"ComponentName":"FY-2028 Input",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY_Input",
+			"ComponentName":"FY-2029 Input",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY_Input",
+			"ComponentName":"FY-2030 Input",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY_Input",
+			"ComponentName":"FY-2022 Input",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY_Input",
+			"ComponentName":"FY-2023 Input",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY_Input",
+			"ComponentName":"FY-2024 Input",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY_Input",
+			"ComponentName":"FY-2025 Input",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY_Input",
+			"ComponentName":"FY-2020 Input",
+			"Weight":1
+		},
+		{
+			"ParentName":"FY_Input",
+			"ComponentName":"FY-2021 Input",
+			"Weight":1
+		}
+	],
+	"Subsets@Code.links":
+	[
+		"Time.subsets/Default.json",
+		"Time.subsets/FY2020.json",
+		"Time.subsets/FY2021.json",
+		"Time.subsets/Leaf_Level.json",
+		"Time.subsets/nFinancial_Reporting.cProcess.Cube.Load.nFinancial.Reporting.20260811064525.991.json"
+	]
+}

@@ -1,0 +1,45 @@
+{
+	"@type":"Cube",
+	"Name":"Financial_Reporting",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Version')"
+		},
+		{
+			"@id":"Dimensions('Currency')"
+		},
+		{
+			"@id":"Dimensions('Company')"
+		},
+		{
+			"@id":"Dimensions('Division')"
+		},
+		{
+			"@id":"Dimensions('Department')"
+		},
+		{
+			"@id":"Dimensions('Location')"
+		},
+		{
+			"@id":"Dimensions('Time')"
+		},
+		{
+			"@id":"Dimensions('Account')"
+		},
+		{
+			"@id":"Dimensions('Measure')"
+		}
+	],
+	"ViewStorageMaxMemory":400000,
+	"ViewStorageMinTime":2,
+	"TimeDimension":
+	{
+		"@id":"Dimensions('Time')"
+	},
+	"Views@Code.links":
+	[
+		"Financial_Reporting.views/Accounting Over Head.json",
+		"Financial_Reporting.views/Default.json"
+	]
+}

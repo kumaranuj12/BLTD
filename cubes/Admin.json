@@ -1,0 +1,17 @@
+{
+	"@type":"Cube",
+	"Name":"Admin",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Admin_Element')"
+		},
+		{
+			"@id":"Dimensions('Admin_String')"
+		}
+	],
+	"Views@Code.links":
+	[
+		"Admin.views/Default.json"
+	]
+}

@@ -1,0 +1,60 @@
+#region Prolog
+vDim = 'Account';
+sAttDim='}ElementAttributes_'|vDim;
+sDimSeg2 = 'Segment2';
+sAttDimSeg2='}ElementAttributes_'|sDimSeg2;
+IF(DimensionExists(vDim) = 1);
+  #  DimensionDeleteAllElements(vDim);
+ELSE;
+    DimensionCreate(vDim);
+ENDIF;
+
+
+
+sAttDes = 'Description';
+sAttAccTy = 'Account_Type';
+sAtCaption = 'Caption';
+sAttSeg2='Segment2';
+
+IF( DIMIX( sAttDim, sAttDes ) = 0 ); AttrInsert(vDim, '', sAttDes, 'S'); ENDIF;
+IF( DIMIX( sAttDim, sAttAccTy ) = 0 ); AttrInsert(vDim,'' , sAttAccTy, 'S'); ENDIF;
+IF( DIMIX( sAttDim, sAtCaption) = 0 ); AttrInsert(vDim, '', sAtCaption, 'A'); ENDIF;
+IF( DIMIX( sAttDim, sAttSeg2 ) = 0 ); AttrInsert(vDim, '', sAttSeg2, 'S'); ENDIF;
+#endregion
+#region Metadata
+#############################################################
+# METADATA - Builds consolidation hierarchy
+
+#############################################################
+
+#vCurrentAcct = vSegment1;
+vCurrentAcct = vGL_Number;
+# 1. Create the Elements
+IF (vCurrentAcct @<>'');
+	IF(DimensionElementExists( vDim, vCurrentAcct )=0);
+		DimensionElementInsert(vDim, '', vCurrentAcct, 'N');
+		DimensionSortOrder( vDim , ' byName' , 'Ascending' , 'byName', 'Ascending' );
+	ENDIF;
+ENDIF;
+IF (vSegment2 @<>'');
+IF(DimensionElementExists( sDimSeg2 , vSegment2 )=0);
+		DimensionElementInsert(sDimSeg2, '', vSegment2, 'N');		
+	ENDIF;
+ENDIF;
+
+ASCIIOutput( 'Account_Dim_Export.txt',vGL_Number);
+#endregion
+#region Data
+#############################################################
+# DATA - Fires for every row returned by the SQL query
+# Writes all attribute values to each leaf element
+#############################################################
+#vCurrentAcct = vSegment1;
+vCurrentAcct = vGL_Number;
+# Assign values to the leaf level 
+AttrPutS(vCost_Desc, vDim, vCurrentAcct, sAttDes);
+AttrPutS(vAcctType, vDim, vCurrentAcct, sAttAccTy);
+AttrPutS(vCurrentAcct | ' - ' | vGLDescription, vDim, vCurrentAcct,sAtCaption);
+AttrPutS(vSegment2, vDim, vCurrentAcct,sAttSeg2);
+AttrPutS(vLocation, sDimSeg2,vSegment2 ,sAttDes);
+#endregion

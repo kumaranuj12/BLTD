@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"LeafDivision",
+	"Alias":"Caption",
+	"Expression":"{FILTER(DISTINCT(TM1SUBSETALL([Division_Department].[Division_Department])) , ([Division_Department].[Division_Department].CURRENTMEMBER.PROPERTIES(\"Type\") = \"Division\"))}"
+}

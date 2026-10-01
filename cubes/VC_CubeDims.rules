@@ -1,0 +1,2 @@
+['DimName']=S: TABDIM( !}Cubes, NUMBR(!VC_Dimensions));
+['DimCount']=N: IF( DB('VC_CubeDims',!}Cubes,!VC_Dimensions,'DimName') @= '', 0, 1);

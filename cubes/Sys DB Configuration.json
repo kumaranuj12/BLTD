@@ -1,0 +1,20 @@
+{
+	"@type":"Cube",
+	"Name":"Sys DB Configuration",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Project Phase')"
+		},
+		{
+			"@id":"Dimensions('Process Mode')"
+		},
+		{
+			"@id":"Dimensions('mDB_Configuration')"
+		}
+	],
+	"Views@Code.links":
+	[
+		"Sys DB Configuration.views/Default.json"
+	]
+}

@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"Accounting",
+	"Alias":"Caption",
+	"Expression":"{TM1FILTERBYPATTERN(TM1DRILLDOWNMEMBER(EXCEPT(ORDER([Department].[Department].MEMBERS , [Department].[Department].CURRENTMEMBER.PROPERTIES(\"MEMBER_NAME\") , ASC) , {[Department].[Department].[All_Departments]}) , ALL , RECURSIVE) , \"81*\" , \"Caption\")}"
+}

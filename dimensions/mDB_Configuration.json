@@ -1,0 +1,12 @@
+{
+	"@type":"Dimension",
+	"Name":"mDB_Configuration",
+	"Hierarchies@Code.links":
+	[
+		"mDB_Configuration.hierarchies/mDB_Configuration.json"
+	],
+	"DefaultHierarchy":
+	{
+		"@id":"Dimensions('mDB_Configuration')/Hierarchies('mDB_Configuration')"
+	}
+}

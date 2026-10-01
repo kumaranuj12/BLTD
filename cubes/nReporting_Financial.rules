@@ -1,0 +1,4 @@
+SKIPCHECK;
+FEEDSTRINGS;
+[]=S:DB('nFinancial_Reporting', !Version, !Currency, !Company, !Division_Department, !NLocation, !Time, !Account, !Measure );
+[]=N:DB('nFinancial_Reporting', !Version, !Currency, !Company, !Division_Department, !NLocation, !Time, !Account, !Measure );

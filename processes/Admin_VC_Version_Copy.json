@@ -1,0 +1,91 @@
+{
+	"@type":"Process",
+	"Name":"Admin_VC_Version_Copy",
+	"HasSecurityAccess":false,
+	"Code@Code.link":"Admin_VC_Version_Copy.ti",
+	"UIData":"CubeAction=1511\fDataAction=1503\fCubeLogChanges=0\f",
+	"VariablesUIData":
+	[
+		"VarType=32\fColType=827\f"
+	],
+	"DataSource":
+	{
+		"Type":"TM1DimensionSubset",
+		"dataSourceNameForClient":"}Cubes",
+		"dataSourceNameForServer":"}Cubes",
+		"subset":"All"
+	},
+	"Parameters":
+	[
+		{
+			"Name":"pMap1Dim",
+			"Prompt":"Enter Dim1 Name?",
+			"Value":"Version",
+			"Type":"String"
+		},
+		{
+			"Name":"pMap1From",
+			"Prompt":"Source1 Element Name?",
+			"Value":"Budget",
+			"Type":"String"
+		},
+		{
+			"Name":"pMap1To",
+			"Prompt":"Target1  Element Name?",
+			"Value":"Test01",
+			"Type":"String"
+		},
+		{
+			"Name":"pMap2Dim",
+			"Prompt":"Enter Dim2 Name?",
+			"Value":"Time_Summary",
+			"Type":"String"
+		},
+		{
+			"Name":"pMap2From",
+			"Prompt":"Source2  Element Name?",
+			"Value":"FY_2020",
+			"Type":"String"
+		},
+		{
+			"Name":"pMap2To",
+			"Prompt":"Target2 Element Name?",
+			"Value":"FY_2021",
+			"Type":"String"
+		},
+		{
+			"Name":"pMap3Dim",
+			"Prompt":"Enter Dim3 Name?",
+			"Value":"",
+			"Type":"String"
+		},
+		{
+			"Name":"pMap3From",
+			"Prompt":"Source3 Element Name?",
+			"Value":"",
+			"Type":"String"
+		},
+		{
+			"Name":"pMap3To",
+			"Prompt":"Target3 Element Name?",
+			"Value":"",
+			"Type":"String"
+		},
+		{
+			"Name":"pRuleFlag",
+			"Prompt":"1 ActiveCopy/0 ValueCopy?",
+			"Value":1,
+			"Type":"Numeric"
+		}
+	],
+	"Variables":
+	[
+		{
+			"Name":"Cube",
+			"Type":"String",
+			"Position":1,
+			"StartByte":0,
+			"EndByte":0
+		}
+	]
+}

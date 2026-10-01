@@ -1,0 +1,34 @@
+{
+	"@type":"NativeView",
+	"Name":"Default",
+	"Columns":
+	[
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Admin_String')/Hierarchies('Admin_String')"
+				},
+				"Expression":"{[Admin_String].[Admin_String].MEMBERS}"
+			}
+		}
+	],
+	"Rows":
+	[
+		{
+			"Subset":
+			{
+				"Hierarchy":
+				{
+					"@id":"Dimensions('Admin_Element')/Hierarchies('Admin_Element')"
+				},
+				"Expression":"{[Admin_Element].[Admin_Element].MEMBERS}"
+			}
+		}
+	],
+	"Titles":[],
+	"SuppressEmptyColumns":false,
+	"SuppressEmptyRows":false,
+	"FormatString":"0.00"
+}

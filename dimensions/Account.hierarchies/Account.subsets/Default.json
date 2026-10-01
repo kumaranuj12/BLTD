@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"Default",
+	"Alias":"Caption",
+	"Expression":"{[Account].[Account].MEMBERS}"
+}

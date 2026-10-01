@@ -1,0 +1,67 @@
+#region Prolog
+vDimDiv = 'Division';
+vDimDep = 'Department';
+vDimLoc='Location';
+sParentDiv='All_Divisions';
+sParentDep='All_Departments';
+sParentLoc='All_Locations';
+sParEleType='C';
+
+IF(DimensionExists( vDimDep )=0);
+        DimensionCreate( vDimDep );
+ENDIF;
+IF(DimensionExists( vDimDiv )=0);
+        DimensionCreate( vDimDiv );
+ENDIF;
+IF(DimensionExists( vDimLoc )=0);
+        DimensionCreate( vDimLoc );
+ENDIF;
+
+########## Parent Element add###########
+IF( DIMIX( vDimDiv, sParentDiv )=0);
+    DimensionElementInsert( vDimDiv, '',sParentDiv, sParEleType );
+ENDIF;
+IF( DIMIX( vDimDep, sParentDep )=0);
+    DimensionElementInsert( vDimDep, '',sParentDep, sParEleType );
+ENDIF;
+IF( DIMIX( vDimLoc ,sParentLoc )=0);
+    DimensionElementInsert( vDimLoc, '',sParentLoc, sParEleType );
+ENDIF;
+#endregion
+#region Metadata
+
+IF (vType @= 'Division');
+    sElement = SUBST(vSegment2, 1,2);
+    IF(DIMIX( vType, sElement )=0);
+            DimensionElementInsertDirect( vType, '',sElement, 'N' );
+            DimensionElementComponentAddDirect(vType, sParentDiv, sElement,1);       
+
+    ENDIF;   
+ENDIF;
+
+IF (vType @= 'Location');
+    sElement = SUBST(vSegment2, 3,1);
+    IF(DIMIX( vType, sElement )=0);
+            DimensionElementInsertDirect( vType, '',sElement, 'N' );
+            DimensionElementComponentAddDirect(vType, sParentLoc, sElement,1);
+    ENDIF;
+ENDIF;
+
+IF (vType @= 'Department');
+    sElement = SUBST(vSegment2, 4,2);
+  IF(DIMIX( vType, sElement )=0);
+            DimensionElementInsertDirect( vType, '',sElement, 'N' );
+            DimensionElementComponentAddDirect(vType, sParentDep, sElement,1);
+    ENDIF;
+ENDIF;
+sAttDim='}ElementAttributes_'|vType;
+If(Dimix(sAttDim,'Caption')=0);
+ 		AttrInsert( vType, '', 'Caption', 'A' );
+    ENDIF;
+If(Dimix(sAttDim,'Description')=0);
+        AttrInsert( vType, '','Description', 'S' );
+ENDIF;
+#endregion
+#region Epilog
+ExecuteProcess( 'Dmension_Update_Division_Department_And_Location' );
+#endregion

@@ -1,0 +1,6 @@
+{
+	"@type":"Subset",
+	"Name":"Default",
+	"Alias":"MEMBER_NAME",
+	"Expression":"{ORDER([Department].[Department].MEMBERS , [Department].[Department].CURRENTMEMBER.PROPERTIES(\"MEMBER_NAME\") , ASC)}"
+}

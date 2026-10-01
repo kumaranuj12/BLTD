@@ -1,0 +1,10 @@
+{
+	"@type":"Subset",
+	"Name":"PIPELINE",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Corpus Christi')"
+		}
+	]
+}

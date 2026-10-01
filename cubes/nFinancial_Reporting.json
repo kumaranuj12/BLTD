@@ -1,0 +1,40 @@
+{
+	"@type":"Cube",
+	"Name":"nFinancial_Reporting",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Version')"
+		},
+		{
+			"@id":"Dimensions('Currency')"
+		},
+		{
+			"@id":"Dimensions('Company')"
+		},
+		{
+			"@id":"Dimensions('Division_Department')"
+		},
+		{
+			"@id":"Dimensions('NLocation')"
+		},
+		{
+			"@id":"Dimensions('Time')"
+		},
+		{
+			"@id":"Dimensions('Account')"
+		},
+		{
+			"@id":"Dimensions('Measure')"
+		}
+	],
+	"Rules@Code.link":"nFinancial_Reporting.rules",
+	"Views@Code.links":
+	[
+		"nFinancial_Reporting.views/Accounting NonLabor budget.json",
+		"nFinancial_Reporting.views/Default.json",
+		"nFinancial_Reporting.views/Load_nFiancial_Data.json",
+		"nFinancial_Reporting.views/nFinancial_Reporting.cProcess.Cube.Load.nFinancial.Reporting.20260811064525.991.json",
+		"nFinancial_Reporting.views/Somesh_REVIEW.json"
+	]
+}

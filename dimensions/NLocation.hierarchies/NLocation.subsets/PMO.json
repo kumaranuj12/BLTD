@@ -1,0 +1,10 @@
+{
+	"@type":"Subset",
+	"Name":"PMO",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Corpus Christi')"
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"@type":"Subset",
+	"Name":"OFFSHORE",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Corpus Christi')"
+		},
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Louisiana')"
+		}
+	]
+}

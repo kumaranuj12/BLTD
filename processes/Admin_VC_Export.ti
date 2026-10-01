@@ -1,0 +1,270 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+#Created by DJ
+
+# This Process Creates Views for Processing
+
+#=======================================
+# Process Variables
+
+Cube = pCube;
+VariableNum = CELLGETN( 'VC_CubeDims', Cube, 'All Dimensions', 'DimCount') + 1;
+
+FileName = 'VC_Export_' | Cube | '.cma';
+
+CUBESETLOGCHANGES( Cube, 0);
+
+
+#=======================================
+# Create View
+
+ViewName = 'zzVC_Extract_' | Cube;
+SubName = ViewName;
+
+IF( ViewExists( Cube, ViewName) = 1);
+   VIEWDESTROY( Cube, ViewName);
+ENDIF;
+
+VIEWCREATE( Cube, ViewName);
+
+#===================
+# Map1 Version Dim
+
+sDim = Map1Dim;
+sElement = Map1From;
+
+IF( LONG( sDim) > 0);
+IF( SUBSETEXISTS( sDim, SubName) = 1);
+     SUBSETDESTROY( sDim, SubName);
+ENDIF;
+IF( ELLEV( sDim, sElement) > 0);
+  sMDX = '{TM1FILTERBYLEVEL({DESCENDANTS(' | sDim | '.[' | sElement | ']) }, 0)}';
+  SUBSETCREATEBYMDX(SubName, sMDX);
+ENDIF;
+IF( ELLEV( sDim, sElement) = 0);
+   SUBSETCREATE( sDim, SubName);
+   SUBSETELEMENTINSERT(sDim, SubName, sElement, 1);
+ENDIF;
+VIEWSUBSETASSIGN( Cube, ViewName, sDim, SubName);
+ENDIF;
+
+#===================
+# Map2 Time Dim
+
+nvTimeDiff = STRINGTONUMBER(Map2To) - STRINGTONUMBER(Map2From);
+
+
+sDim = Map2Dim;
+sElement = 'FY_' | Map2From;
+
+IF( LONG( sDim) > 0);
+IF( SUBSETEXISTS( sDim, SubName) = 1);
+     SUBSETDESTROY( sDim, SubName);
+ENDIF;
+IF( ELLEV( sDim, sElement) > 0 & SCAN( 'Summary', sDim) = 0 );
+  sMDX = '{TM1FILTERBYLEVEL({DESCENDANTS(' | sDim | '.[' | sElement | ']) }, 0)}';
+ELSEIF ( ELLEV( sDim, sElement) > 0 & SCAN( 'Summary', sDim) > 0 );
+  sMDX ='{FILTER( {TM1SUBSETALL( ['| sDim |'] )}, ['|  sDim |'].CurrentMember.Name = '''| sElement |'_Input''' | '   )} + {TM1FILTERBYLEVEL({DESCENDANTS(' | sDim | '.[' | sElement | ']) }, 0)}';
+#   sMDX ='{FILTER( {TM1SUBSETALL( ['| sDim |'] )}, ['|  sDim |'].CurrentMember.Name = '''| sElement |'_Input''' | ' )}';
+  ASCIIOUTPUT ('Time_MDX.txt', sMDX);
+  SUBSETCREATEBYMDX(SubName, sMDX);
+ENDIF;
+IF( ELLEV( sDim, sElement) = 0);
+   SUBSETCREATE( sDim, SubName);
+   SUBSETELEMENTINSERT(sDim, SubName, sElement, 1);
+ENDIF;
+VIEWSUBSETASSIGN( Cube, ViewName, sDim, SubName);
+ENDIF;
+
+#===================
+# Map3
+
+sDim = Map3Dim;
+sElement = Map3From;
+
+IF( LONG( sDim) > 0);
+IF( SUBSETEXISTS( sDim, SubName) = 1);
+     SUBSETDESTROY( sDim, SubName);
+ENDIF;
+IF( ELLEV( sDim, sElement) > 0);
+  sMDX = '{TM1FILTERBYLEVEL({DESCENDANTS(' | sDim | '.[' | sElement | ']) }, 0)}';
+  SUBSETCREATEBYMDX(SubName, sMDX);
+ENDIF;
+IF( ELLEV( sDim, sElement) = 0);
+   SUBSETCREATE( sDim, SubName);
+   SUBSETELEMENTINSERT(sDim, SubName, sElement, 1);
+ENDIF;
+VIEWSUBSETASSIGN( Cube, ViewName, sDim, SubName);
+ENDIF;
+
+#===================
+# Map4
+
+sDim = Map4Dim;
+sElement = Map4From;
+
+IF( LONG( sDim) > 0);
+IF( SUBSETEXISTS( sDim, SubName) = 1);
+     SUBSETDESTROY( sDim, SubName);
+ENDIF;
+IF( ELLEV( sDim, sElement) > 0);
+  sMDX = '{TM1FILTERBYLEVEL({DESCENDANTS(' | sDim | '.[' | sElement | ']) }, 0)}';
+  SUBSETCREATEBYMDX(SubName, sMDX);
+ENDIF;
+IF( ELLEV( sDim, sElement) = 0);
+   SUBSETCREATE( sDim, SubName);
+   SUBSETELEMENTINSERT(sDim, SubName, sElement, 1);
+ENDIF;
+VIEWSUBSETASSIGN( Cube, ViewName, sDim, SubName);
+ENDIF;
+
+#===================
+# Set View Parameters
+
+# Consolidations 1= Exclude
+ViewExtractSkipCalcsSet (Cube, ViewName, 1);
+# Skip Rules 1= Exclude
+ViewExtractSkipRuleValuesSet (Cube, ViewName, RuleFlag);
+# Skip Zeroes 1= Exclude
+ViewExtractSkipZeroesSet (Cube, ViewName, 1);
+
+#===================
+# Set Data Source
+
+DatasourceNameForServer=Cube;
+DatasourceCubeView = ViewName;
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+# Get Dimension Strings
+S1 = IF( 1 <= VariableNum, V1,'');
+S2 = IF( 2 <= VariableNum, V2,'');
+S3 = IF( 3 <= VariableNum, V3,'');
+S4 = IF( 4 <= VariableNum, V4,'');
+S5 = IF( 5 <= VariableNum, V5,'');
+S6 = IF( 6 <= VariableNum, V6,'');
+S7 = IF( 7 <= VariableNum, V7,'');
+S8 = IF( 8 <= VariableNum, V8,'');
+S9 = IF( 9 <= VariableNum, V9,'');
+S10 = IF(10 <= VariableNum, V10,'');
+S11 = IF(11 <= VariableNum, V11,'');
+S12 = IF(12 <= VariableNum, V12,'');
+S13 = IF(13 <= VariableNum, V13,'');
+S14 = IF(13 <= VariableNum, V14,'');
+
+# Map1 Version Replacement
+IF( LONG( Map1Dim) > 0 & UPPER(Map1From) @<> UPPER(Map1To));
+S1 = IF( UPPER(TABDIM( Cube, 1)) @= UPPER(Map1Dim), Map1To, S1);
+S2 = IF( UPPER(TABDIM( Cube, 2)) @= UPPER(Map1Dim), Map1To, S2);
+S3 = IF( UPPER(TABDIM( Cube, 3)) @= UPPER(Map1Dim), Map1To, S3);
+S4 = IF( UPPER(TABDIM( Cube, 4)) @= UPPER(Map1Dim), Map1To, S4);
+S5 = IF( UPPER(TABDIM( Cube, 5)) @= UPPER(Map1Dim), Map1To, S5);
+S6 = IF( UPPER(TABDIM( Cube, 6)) @= UPPER(Map1Dim), Map1To, S6);
+S7 = IF( UPPER(TABDIM( Cube, 7)) @= UPPER(Map1Dim), Map1To, S7);
+S8 = IF( UPPER(TABDIM( Cube, 8)) @= UPPER(Map1Dim), Map1To, S8);
+S9 = IF( UPPER(TABDIM( Cube, 9)) @= UPPER(Map1Dim), Map1To, S9);
+S10 = IF( UPPER(TABDIM( Cube, 10)) @= UPPER(Map1Dim), Map1To, S10);
+S11 = IF( UPPER(TABDIM( Cube, 11)) @= UPPER(Map1Dim), Map1To, S11);
+S12 = IF( UPPER(TABDIM( Cube, 12)) @= UPPER(Map1Dim), Map1To, S12);
+S13 = IF( UPPER(TABDIM( Cube, 13)) @= UPPER(Map1Dim), Map1To, S13);
+S14 = IF( UPPER(TABDIM( Cube, 14)) @= UPPER(Map1Dim), Map1To, S14);
+ENDIF;
+
+# Map2 Time Replacement
+#nvTimeDiff 
+IF( LONG( Map2Dim) > 0 &  ELLEV( Map2Dim, 'FY_' | Map2To) > 0  & UPPER(Map2From) @<> UPPER(Map2To));
+
+S1 = IF( UPPER(TABDIM( Cube, 1)) @= UPPER(Map2Dim), IF(SCAN('Input',S1)>0, SUBST ( S1,1,3 ) | Map2To | '_Input'  , SUBST ( S1,1,3 ) | Map2To) , S1);
+S2 = IF( UPPER(TABDIM( Cube, 2)) @= UPPER(Map2Dim), IF(SCAN('Input',S2)>0, SUBST ( S1,2,3 ) | Map2To | '_Input'  , SUBST ( S2,1,3 ) | Map2To), S2);
+S3 = IF( UPPER(TABDIM( Cube, 3)) @= UPPER(Map2Dim), IF(SCAN('Input',S3)>0, SUBST ( S1,3,3 ) | Map2To | '_Input'  , SUBST ( S3,1,3 ) | Map2To), S3);
+S4 = IF( UPPER(TABDIM( Cube, 4)) @= UPPER(Map2Dim), IF(SCAN('Input',S4)>0, SUBST ( S1,4,3 ) | Map2To | '_Input'  , SUBST ( S4,1,3 ) | Map2To), S4);
+S5 = IF( UPPER(TABDIM( Cube, 5)) @= UPPER(Map2Dim), IF(SCAN('Input',S5)>0, SUBST ( S1,5,3 ) | Map2To | '_Input'  , SUBST ( S5,1,3 ) | Map2To), S5);
+S6 = IF( UPPER(TABDIM( Cube, 6)) @= UPPER(Map2Dim), IF(SCAN('Input',S6)>0, SUBST ( S1,6,3 ) | Map2To | '_Input'  , SUBST ( S6,1,3 ) | Map2To), S6);
+S7 = IF( UPPER(TABDIM( Cube, 7)) @= UPPER(Map2Dim), IF(SCAN('Input',S7)>0, SUBST ( S1,7,3 ) | Map2To | '_Input'  , SUBST ( S7,1,3 ) | Map2To), S7);
+S8 = IF( UPPER(TABDIM( Cube, 8)) @= UPPER(Map2Dim), IF(SCAN('Input',S8)>0, SUBST ( S1,8,3 ) | Map2To | '_Input'  , SUBST ( S8,1,3 ) | Map2To), S8);
+S9 = IF( UPPER(TABDIM( Cube, 9)) @= UPPER(Map2Dim), IF(SCAN('Input',S9)>0, SUBST ( S1,9,3 ) | Map2To | '_Input'  , SUBST ( S9,1,3 ) | Map2To), S9);
+S10 = IF( UPPER(TABDIM( Cube, 10)) @= UPPER(Map2Dim), IF(SCAN('Input',S10)>0, SUBST ( S10,1,3 ) | Map2To | '_Input'  , SUBST ( S10,1,3 ) | Map2To), S10);
+S11 = IF( UPPER(TABDIM( Cube, 11)) @= UPPER(Map2Dim), IF(SCAN('Input',S11)>0, SUBST ( S11,1,3 ) | Map2To | '_Input'  , SUBST ( S11,1,3 ) | Map2To), S11);
+S12 = IF( UPPER(TABDIM( Cube, 12)) @= UPPER(Map2Dim), IF(SCAN('Input',S12)>0, SUBST ( S12,1,3 ) | Map2To | '_Input'  , SUBST ( S12,1,3 ) | Map2To), S12);
+S13 = IF( UPPER(TABDIM( Cube, 13)) @= UPPER(Map2Dim), IF(SCAN('Input',S13)>0, SUBST ( S13,1,3 ) | Map2To | '_Input'  , SUBST ( S13,1,3 ) | Map2To), S13);
+S14 = IF( UPPER(TABDIM( Cube, 14)) @= UPPER(Map2Dim), IF(SCAN('Input',S14)>0, SUBST ( S14,1,3 ) | Map2To | '_Input'  , SUBST ( S14,1,3 ) | Map2To), S14);
+
+
+ENDIF;
+
+# Map3 Replacement
+IF( LONG( Map3Dim) > 0 & UPPER(Map3From) @<> UPPER(Map3To));
+S1 = IF( UPPER(TABDIM( Cube, 1)) @= UPPER(Map3Dim), Map3To, S1);
+S2 = IF( UPPER(TABDIM( Cube, 2)) @= UPPER(Map3Dim), Map3To, S2);
+S3 = IF( UPPER(TABDIM( Cube, 3)) @= UPPER(Map3Dim), Map3To, S3);
+S4 = IF( UPPER(TABDIM( Cube, 4)) @= UPPER(Map3Dim), Map3To, S4);
+S5 = IF( UPPER(TABDIM( Cube, 5)) @= UPPER(Map3Dim), Map3To, S5);
+S6 = IF( UPPER(TABDIM( Cube, 6)) @= UPPER(Map3Dim), Map3To, S6);
+S7 = IF( UPPER(TABDIM( Cube, 7)) @= UPPER(Map3Dim), Map3To, S7);
+S8 = IF( UPPER(TABDIM( Cube, 8)) @= UPPER(Map3Dim), Map3To, S8);
+S9 = IF( UPPER(TABDIM( Cube, 9)) @= UPPER(Map3Dim), Map3To, S9);
+S10 = IF( UPPER(TABDIM( Cube, 10)) @= UPPER(Map3Dim), Map3To, S10);
+S11 = IF( UPPER(TABDIM( Cube, 11)) @= UPPER(Map3Dim), Map3To, S11);
+S12 = IF( UPPER(TABDIM( Cube, 12)) @= UPPER(Map3Dim), Map3To, S12);
+S13 = IF( UPPER(TABDIM( Cube, 13)) @= UPPER(Map3Dim), Map3To, S13);
+S14 = IF( UPPER(TABDIM( Cube, 14)) @= UPPER(Map3Dim), Map3To, S14);
+ENDIF;
+
+# Map4 Replacement
+IF( LONG( Map4Dim) > 0 & UPPER(Map4From) @<> UPPER(Map4To));
+S1 = IF( UPPER(TABDIM( Cube, 1)) @= UPPER(Map4Dim), Map4To, S1);
+S2 = IF( UPPER(TABDIM( Cube, 2)) @= UPPER(Map4Dim), Map4To, S2);
+S3 = IF( UPPER(TABDIM( Cube, 3)) @= UPPER(Map4Dim), Map4To, S3);
+S4 = IF( UPPER(TABDIM( Cube, 4)) @= UPPER(Map4Dim), Map4To, S4);
+S5 = IF( UPPER(TABDIM( Cube, 5)) @= UPPER(Map4Dim), Map4To, S5);
+S6 = IF( UPPER(TABDIM( Cube, 6)) @= UPPER(Map4Dim), Map4To, S6);
+S7 = IF( UPPER(TABDIM( Cube, 7)) @= UPPER(Map4Dim), Map4To, S7);
+S8 = IF( UPPER(TABDIM( Cube, 8)) @= UPPER(Map4Dim), Map4To, S8);
+S9 = IF( UPPER(TABDIM( Cube, 9)) @= UPPER(Map4Dim), Map4To, S9);
+S10 = IF( UPPER(TABDIM( Cube, 10)) @= UPPER(Map4Dim), Map4To, S10);
+S11 = IF( UPPER(TABDIM( Cube, 11)) @= UPPER(Map4Dim), Map4To, S11);
+S12 = IF( UPPER(TABDIM( Cube, 12)) @= UPPER(Map4Dim), Map4To, S12);
+S13 = IF( UPPER(TABDIM( Cube, 13)) @= UPPER(Map4Dim), Map4To, S13);
+S14 = IF( UPPER(TABDIM( Cube, 14)) @= UPPER(Map4Dim), Map4To, S14);
+ENDIF;
+
+ASCIIOUTPUT( FileName, Cube, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11,S12,S13,S14);
+
+IF ( Cube @= 'Revenue_Planning_Summary' );
+     ASCIIOUTPUT( 'Revenue_Summary_Export.csv' , Cube, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11,S12,S13,S14);
+ENDIF;
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+CUBESETLOGCHANGES( Cube, 1);
+
+
+# Clean Up View
+VIEWDESTROY( Cube, ViewName);
+
+# Clean Up Subsets
+Count = 1;
+DimCount = CELLGETN( 'VC_CubeDims', Cube, 'All Dimensions', 'DimCount');
+WHILE( Count <= DimCount);
+  sDim = TABDIM( Cube, Count);
+  IF( SUBSETEXISTS( sDim, SubName) = 1);
+       SUBSETDESTROY( sDim, SubName);
+  ENDIF;
+  Count = Count + 1;
+END;
+
+#endregion

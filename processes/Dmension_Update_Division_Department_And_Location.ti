@@ -1,0 +1,39 @@
+#region Prolog
+vDim1 = 'Division';
+vDim2 = 'Department';
+vDim3 = 'Location';
+#endregion
+#region Metadata
+IF (vGL_Type @= 'Division');
+       vCurrentDim = vDim1;
+    vParent = 'All_Divisions';
+ELSEIF (vGL_Type @= 'Department');
+       vCurrentDim = vDim2;
+      vParent = 'All_Departments';
+ELSEIF (vGL_Type @= 'Location');
+       vCurrentDim = vDim3;
+     vParent = 'All_Locations';
+ENDIF;
+
+ASCIIOUTPUT('Segment2_Export.txt', vGL_Code, vGL_Type, vCurrentDim, vGL_Desc);
+
+IF(DIMIX(vCurrentDim, vGL_Code) =0);
+    DimensionElementComponentAddDirect( vCurrentDim, vParent, vGL_Code, 1);
+ENDIF;
+     
+#endregion
+#region Data
+IF (vGL_Type @= 'Division');
+       vCurrentDim = vDim1;
+ELSEIF (vGL_Type @= 'Department');
+       vCurrentDim = vDim2;
+ELSEIF (vGL_Type @= 'Location');
+       vCurrentDim = vDim3;
+ENDIF;
+ASCIIOutput( 'test.txt',vGL_Code,vGL_Type );
+
+
+ATTRPUTS(vGL_Desc, vCurrentDim, vGL_Code, 'Description');
+
+ATTRPUTS(vGL_Code | ' - ' |vGL_Desc, vCurrentDim, vGL_Code, 'Caption');
+#endregion

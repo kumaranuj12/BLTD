@@ -1,0 +1,18 @@
+{
+	"@type":"Cube",
+	"Name":"VC_CubeDims",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('}Cubes')"
+		},
+		{
+			"@id":"Dimensions('VC_Dimensions')"
+		},
+		{
+			"@id":"Dimensions('VC_Dimensions_Measure')"
+		}
+	],
+	"Rules@Code.link":"VC_CubeDims.rules",
+	"Views@Code.links":[]
+}

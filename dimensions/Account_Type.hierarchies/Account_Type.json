@@ -1,0 +1,19 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Account_Type",
+	"Elements":
+	[
+		{
+			"Name":"Labor",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Non Labor",
+			"Type":"Numeric"
+		}
+	],
+	"Subsets@Code.links":
+	[
+		"Account_Type.subsets/Default.json"
+	]
+}

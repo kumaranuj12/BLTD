@@ -1,0 +1,12 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Admin_String",
+	"Elements":
+	[
+		{
+			"Name":"String",
+			"Type":"String"
+		}
+	],
+	"Subsets@Code.links":[]
+}

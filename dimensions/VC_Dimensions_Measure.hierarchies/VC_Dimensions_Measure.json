@@ -1,0 +1,16 @@
+{
+	"@type":"Hierarchy",
+	"Name":"VC_Dimensions_Measure",
+	"Elements":
+	[
+		{
+			"Name":"DimName",
+			"Type":"String"
+		},
+		{
+			"Name":"DimCount",
+			"Type":"Numeric"
+		}
+	],
+	"Subsets@Code.links":[]
+}

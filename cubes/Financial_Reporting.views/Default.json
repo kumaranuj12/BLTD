@@ -1,0 +1,47 @@
+{
+	"@type":"MDXView",
+	"Name":"Default",
+	"MDX@Code.link":"Default.mdx",
+	"Meta" : 
+	{
+		"Aliases" : 
+		{
+			"[Account].[Account]" : "Caption",
+			"[Department].[Department]" : "Caption",
+			"[Division].[Division]" : "Caption",
+			"[Location].[Location]" : "Caption",
+			"[Time].[Time]" : "Caption"
+		},
+		"ContextSets" : 
+		{
+			"[Company].[Company]" : 
+			{
+				"Expression" : "{[Company].[Company].MEMBERS}"
+			},
+			"[Currency].[Currency]" : 
+			{
+				"Expression" : "{[Currency].[Currency].MEMBERS}"
+			},
+			"[Measure].[Measure]" : 
+			{
+				"Expression" : "{[Measure].[Measure].MEMBERS}"
+			},
+			"[Version].[Version]" : 
+			{
+				"Expression" : "{[Version].[Version].MEMBERS}"
+			}
+		},
+		"ExpandAboves" : 
+		{
+			"[Account].[Account]" : false,
+			"[Company].[Company]" : false,
+			"[Currency].[Currency]" : false,
+			"[Department].[Department]" : false,
+			"[Division].[Division]" : false,
+			"[Location].[Location]" : false,
+			"[Measure].[Measure]" : false,
+			"[Time].[Time]" : false,
+			"[Version].[Version]" : false
+		}
+	}
+}

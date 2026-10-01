@@ -1,0 +1,5 @@
+{
+	"@type":"Subset",
+	"Name":"nFinancial_Reporting.cProcess.Cube.Load.nFinancial.Reporting.20260811064525.991",
+	"Expression":"{TM1FILTERBYPATTERN(TM1FILTERBYLEVEL(DISTINCT(TM1DRILLDOWNMEMBER(DRILLUPMEMBER(DRILLDOWNMEMBER({[Time].[Time].[All_Years]} ,                 {[Time].[Time].[All_Years]} , RECURSIVE) , {[Time].[Time].[All_Years]}) , {[Time].[Time].[All_Years]} , RECURSIVE)) , 0) , \"*2026\" )}"
+}

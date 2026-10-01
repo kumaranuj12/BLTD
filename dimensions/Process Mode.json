@@ -1,0 +1,12 @@
+{
+	"@type":"Dimension",
+	"Name":"Process Mode",
+	"Hierarchies@Code.links":
+	[
+		"Process Mode.hierarchies/Process Mode.json"
+	],
+	"DefaultHierarchy":
+	{
+		"@id":"Dimensions('Process Mode')/Hierarchies('Process Mode')"
+	}
+}

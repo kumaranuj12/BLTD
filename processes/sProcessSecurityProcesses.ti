@@ -1,0 +1,122 @@
+#region Prolog
+
+
+cProcess = GetProcessName();
+cTimeStamp = TimSt( Now, '\Y\m\d\h\i\s' );
+sRandomInt = NumberToString( INT( RAND( ) * 1000 ));
+cDebugFile = GetProcessErrorFileDirectory | cProcess | '.' | cTimeStamp | '.' | sRandomInt ;
+#===================
+#  Initialise Debug
+sDebugFile = cDebugFile | 'Data.debug';
+
+#####Define Variables#####
+sProcessNm = getProcessName();
+sView = 'VE-' | sProcessNm;
+sSub = 'VE-' | sProcessNm;
+cCube = '}ProcessSecurity';
+dGrp = '}Groups';
+dDim='}Processes';
+IF(CubeExists( '}ProcessSecurity' )=0);
+    CubeCreate( '}ProcessSecurity','}Processes','}Groups' );
+
+ENDIF;    
+
+CubeSetLogChanges(cCube, 0);
+#####Destroy previous views and subsets#####
+IF(ViewExists(cCube, sView)= 1); 
+     ViewDestroy(cCube, sView);
+ENDIF;
+
+iDimCnt1 = 1;
+
+WHILE(TABDIM(cCube, iDimCnt1) @<> '');
+     vDim = TABDIM(cCube, iDimCnt1);
+     IF(SubsetExists(vDim, sSub)=1);
+          SubsetDestroy(vDim, sSub);
+     ENDIF;
+     iDimCnt1 = iDimCnt1 + 1;
+END;
+
+#####Create Dim Subset#####
+sMDX = '{TM1SORT( {TM1FILTERBYLEVEL( {TM1SUBSETALL( [' | dDim | '] )}, 0)}, ASC)}';
+SubsetCreatebyMDX(sSub, sMDX);
+
+
+######Create Groups#####
+sMDX= '{ EXCEPT( {TM1SUBSETALL( ['|dGrp|'] )}, { ['|dGrp|'].[ADMIN], ['|dGrp|'].[SecurityAdmin], ['|dGrp|'].[DataAdmin], ['|dGrp|'].[OperationsAdmin] }) }';
+SubsetCreatebyMDX(sSub, sMDX);
+
+
+#####Create View#####
+ViewCreate(cCube, sView);
+ViewSubsetAssign(cCube, sView,dDim, sView);
+ViewSubsetAssign(cCube, sView,dGrp, sView);
+ViewRowDimensionSet(cCube, sView,dDim, 1);
+ViewColumnDimensionSet(cCube, sView,dGrp,1);
+
+
+#####Set View Filters#####
+ViewExtractSkipCalcsSet(cCube, sView, 0);
+ViewExtractSkipZeroesSet(cCube, sView, 0);
+
+
+#####Zero Out View#####
+VIEWZEROOUT(cCube, sView ) ;
+
+
+#####Set new views as the datasource#####
+    DatasourceNameForServer = cCube;
+    DatasourceCubeView = sView;
+#endregion
+#region Data
+  # Set debug file name
+  
+eGrp = LOWER(ATTRS(dGrp, vGrp, '}TM1_DefaultDisplayValue'));
+#####ASSIGN SECURITY#####
+
+cCube = '}ProcessSecurity';
+#IF(SCAN(vClient, eGrp) <> 0 );
+  #  CELLPUTS( 'READ', cCube, vDimElements, vGrp);
+    #ELSE;
+     #CELLPUTS( 'NONE', cCube, vDimElements, vGrp);
+#ENDIF;
+
+  
+        
+	IF( SUBST ( vDimElements, 1,1 ) @= '}');
+       CELLPUTS( 'NONE', cCube, vDimElements, vGrp);
+    ELSE ;
+       CELLPUTS( 'READ', cCube, vDimElements, vGrp);
+    ENDIF; 
+
+
+#####EXPORT ISSUE LOG#####
+IF(pDebug = 1);
+ ASCIIOUTPUT(sDebugFile,  eGrp, cCube, vGrp, vAccess);
+ENDIF;
+#endregion
+#region Epilog
+
+#####Cleanup Views & Subsets#####
+
+CubeSetLogChanges(cCube, 1);
+
+IF(pDebug <> 1);
+IF(ViewExists(cCube, sView)= 1); 
+     ViewDestroy(cCube, sView);
+ENDIF;
+
+#ViewCreate( cCube, sView);
+
+iDimCnt1 = 1;
+
+WHILE(TABDIM(cCube, iDimCnt1) @<> '');
+     vDim = TABDIM(cCube, iDimCnt1);
+     IF(SubsetExists(vDim, sSub)=1);
+          SubsetDestroy(vDim, sSub);
+     ENDIF;
+     iDimCnt1 = iDimCnt1 + 1;
+END;
+
+ENDIF;
+#endregion

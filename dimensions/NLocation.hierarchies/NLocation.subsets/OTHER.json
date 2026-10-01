@@ -1,0 +1,19 @@
+{
+	"@type":"Subset",
+	"Name":"OTHER",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Lubbock')"
+		},
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Louisiana')"
+		},
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Houston')"
+		},
+		{
+			"@id":"Dimensions('NLocation')/Hierarchies('NLocation')/Elements('Corpus Christi')"
+		}
+	]
+}

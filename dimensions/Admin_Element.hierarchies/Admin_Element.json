@@ -1,0 +1,44 @@
+{
+	"@type":"Hierarchy",
+	"Name":"Admin_Element",
+	"Elements":
+	[
+		{
+			"Name":"Month_Rollover_Day",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"ReportMonth",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"ReportPlant",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Current_FiscalYear",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Current_Period",
+			"Type":"String"
+		},
+		{
+			"Name":"Budget_Year",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Forecast_Year",
+			"Type":"String"
+		},
+		{
+			"Name":"Forecast_Month",
+			"Type":"String"
+		},
+		{
+			"Name":"Server Type",
+			"Type":"String"
+		}
+	],
+	"Subsets@Code.links":[]
+}

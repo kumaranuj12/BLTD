@@ -1,0 +1,116 @@
+{
+	"@type":"Hierarchy",
+	"Name":"NLocation",
+	"Elements":
+	[
+		{
+			"Name":"All_Locations",
+			"Type":"Consolidated"
+		},
+		{
+			"Name":"Corpus Christi",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Lubbock",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Houston",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Louisiana",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Midland",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Montana",
+			"Type":"Numeric"
+		},
+		{
+			"Name":"Sweet Water",
+			"Type":"Numeric"
+		}
+	],
+	"Edges":
+	[
+		{
+			"ParentName":"All_Locations",
+			"ComponentName":"Corpus Christi",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Locations",
+			"ComponentName":"Lubbock",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Locations",
+			"ComponentName":"Houston",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Locations",
+			"ComponentName":"Louisiana",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Locations",
+			"ComponentName":"Midland",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Locations",
+			"ComponentName":"Montana",
+			"Weight":1
+		},
+		{
+			"ParentName":"All_Locations",
+			"ComponentName":"Sweet Water",
+			"Weight":1
+		}
+	],
+	"Subsets@Code.links":
+	[
+		"NLocation.subsets/ACCOUNTING.json",
+		"NLocation.subsets/BI.json",
+		"NLocation.subsets/BUS DEVELOP.json",
+		"NLocation.subsets/CORP MGT.json",
+		"NLocation.subsets/Default.json",
+		"NLocation.subsets/DOCK.json",
+		"NLocation.subsets/ESTIMATING.json",
+		"NLocation.subsets/FABRICATION.json",
+		"NLocation.subsets/HR.json",
+		"NLocation.subsets/HWYTRKMAT.json",
+		"NLocation.subsets/IE.json",
+		"NLocation.subsets/INDUSTRIAL.json",
+		"NLocation.subsets/INTERNAL AUDIT.json",
+		"NLocation.subsets/INTERNAL EQUIP.json",
+		"NLocation.subsets/INVEST RECOVERY.json",
+		"NLocation.subsets/IT.json",
+		"NLocation.subsets/LeafLocation.json",
+		"NLocation.subsets/LEGAL.json",
+		"NLocation.subsets/MANAGEMENTADMIN.json",
+		"NLocation.subsets/nFinancial_Reporting.cProcess.Cube.Load.nFinancial.Reporting.20260811064525.991.json",
+		"NLocation.subsets/OFFSHORE.json",
+		"NLocation.subsets/OTHER.json",
+		"NLocation.subsets/PERSONNEL.json",
+		"NLocation.subsets/PIPELINE.json",
+		"NLocation.subsets/PMO.json",
+		"NLocation.subsets/PROJECT CONTROLS.json",
+		"NLocation.subsets/PROJECT FINANCE.json",
+		"NLocation.subsets/PURCHASING.json",
+		"NLocation.subsets/QAQC.json",
+		"NLocation.subsets/REDFISH BAY.json",
+		"NLocation.subsets/RIGGING HAULING.json",
+		"NLocation.subsets/SAFETY.json",
+		"NLocation.subsets/SCAFFOLDING.json",
+		"NLocation.subsets/TANK.json",
+		"NLocation.subsets/TOOLROOM.json",
+		"NLocation.subsets/TURNAROUND.json"
+	]
+}

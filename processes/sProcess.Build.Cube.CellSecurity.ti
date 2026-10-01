@@ -1,0 +1,8 @@
+#region Prolog
+
+vCubeName = 'nFinancial_Reporting';
+
+CellSecurityCubeCreate (vCubeName,'0:0:0:1:1:0:0:0');
+
+
+#endregion

@@ -1,0 +1,31 @@
+{
+	"@type":"Hierarchy",
+	"Name":"mDB_Configuration",
+	"Elements":
+	[
+		{
+			"Name":"ODBC Name",
+			"Type":"String"
+		},
+		{
+			"Name":"User",
+			"Type":"String"
+		},
+		{
+			"Name":"Password",
+			"Type":"String"
+		},
+		{
+			"Name":"Table Name",
+			"Type":"String"
+		},
+		{
+			"Name":"SQL Query",
+			"Type":"String"
+		}
+	],
+	"Subsets@Code.links":
+	[
+		"mDB_Configuration.subsets/All Leaf.json"
+	]
+}

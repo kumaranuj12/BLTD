@@ -1,0 +1,21 @@
+{
+	"@type":"Process",
+	"Name":"sProcessSecurityElement",
+	"HasSecurityAccess":true,
+	"Code@Code.link":"sProcessSecurityElement.ti",
+	"UIData":"_ParameterConstraints=e30=\f",
+	"DataSource":
+	{
+		"Type":"None"
+	},
+	"Parameters":
+	[
+		{
+			"Name":"pDimension",
+			"Prompt":"Enter the Dimension Name",
+			"Value":"All",
+			"Type":"String"
+		}
+	],
+	"Variables":[]
+}

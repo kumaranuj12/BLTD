@@ -1,0 +1,36 @@
+{
+	"@type":"Cube",
+	"Name":"nReporting_Financial",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('Version')"
+		},
+		{
+			"@id":"Dimensions('Currency')"
+		},
+		{
+			"@id":"Dimensions('Company')"
+		},
+		{
+			"@id":"Dimensions('Division_Department')"
+		},
+		{
+			"@id":"Dimensions('NLocation')"
+		},
+		{
+			"@id":"Dimensions('Time')"
+		},
+		{
+			"@id":"Dimensions('Account')"
+		},
+		{
+			"@id":"Dimensions('Measure')"
+		}
+	],
+	"Rules@Code.link":"nReporting_Financial.rules",
+	"Views@Code.links":
+	[
+		"nReporting_Financial.views/Accounting.NonLobor.AllLocation.json"
+	]
+}

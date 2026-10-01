@@ -1,0 +1,11 @@
+{
+	"@type":"Subset",
+	"Name":"Budget",
+	"Alias":"MEMBER_NAME",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('Version')/Hierarchies('Version')/Elements('Budget')"
+		}
+	]
+}

@@ -1,0 +1,10 @@
+#region Prolog
+ExecuteProcess( 'sProcessSecurityCubes','pDebug',0);
+ExecuteProcess( 'sProcessSecurityDimensions' ,'pDebug',0);
+ExecuteProcess( 'sProcessSecurityProcesses' ,'pDebug',0);
+ExecuteProcess( 'sProcessSecurityElement' ,'pDimension','All');
+#endregion
+#region Epilog
+ExecuteProcess( 'sProcessSecurityRefresh' );
+SaveDataAll;
+#endregion
