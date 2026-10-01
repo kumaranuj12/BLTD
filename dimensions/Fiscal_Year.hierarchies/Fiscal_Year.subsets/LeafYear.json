@@ -1,6 +1,0 @@
-{
-	"@type":"Subset",
-	"Name":"LeafYear",
-	"Alias":"MEMBER_NAME",
-	"Expression":"{TM1SORT(TM1FILTERBYLEVEL(TM1SUBSETALL([Fiscal_Year]) , 0) , ASC)}"
-}
